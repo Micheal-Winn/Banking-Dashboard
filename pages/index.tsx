@@ -1,12 +1,17 @@
 
-
+import Head from 'next/head';
+import Sidebar from '@/components/Sidebar/Sidebar';
 
 export default function Home() {
   return (
-    <main
-      className={`text-4xl font-bold`}
+    <>
+     <Head>
+        <title>My page title</title>
+      </Head>
+      <main
+      className={``}
     >
-      <h1>hi</h1>
     </main>
+    </>
   )
 }
