@@ -11,5 +11,6 @@ interface NavLink{
 
 interface UserCardListInfo{
     total:number,
-    name:string
+    name:string,
+    bgColor:string
 }
