@@ -115,7 +115,7 @@ export default function Sidebar({children}:any) {
       </Navbar.Section>
     </Navbar>
       </div>
-      <main className='ml-10 w-full'>{children}</main>
+      <main className='w-full'>{children}</main>
     </section>
   );
 }
