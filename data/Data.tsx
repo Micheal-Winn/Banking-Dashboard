@@ -65,4 +65,88 @@ export const AdminCards:Array<UserCardListInfo> = [
         name:"Total Transaction Amounts",
         bgColor:'bg-[#20C394]'
     },
-]
+];
+
+
+export const tableData: Array<TableData> = [
+	{
+		id: "1",
+		profile:
+			"https://images.unsplash.com/photo-1620428268482-cf1851a36764?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2FydG9vbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+		name: "Thant",
+		nrc: "5/MaMaNa(N)12345",
+		email: "test1@gmail.com",
+		createdDate: "12/12/2021",
+		totalAccount: 2,
+	},
+	{
+		id: "2",
+		profile:
+			"https://images.unsplash.com/photo-1620428268482-cf1851a36764?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2FydG9vbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+		name: "Thant",
+		nrc: "5/MaMaNa(N)12345",
+		email: "test2@gmail.com",
+		createdDate: "12/12/2021",
+		totalAccount: 2,
+	},
+	{
+		id: "3",
+		profile:
+			"https://images.unsplash.com/photo-1620428268482-cf1851a36764?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2FydG9vbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+		name: "Thant",
+		nrc: "5/MaMaNa(N)12345",
+		email: "test3@gmail.com",
+		createdDate: "12/12/2021",
+		totalAccount: 2,
+	},
+	{
+		id: "4",
+		profile:
+			"https://images.unsplash.com/photo-1620428268482-cf1851a36764?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2FydG9vbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+		name: "Thant",
+		nrc: "5/MaMaNa(N)12345",
+		email: "test4@gmail.com",
+		createdDate: "12/12/2021",
+		totalAccount: 2,
+	},
+	{
+		id: "5",
+		profile:
+			"https://images.unsplash.com/photo-1620428268482-cf1851a36764?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2FydG9vbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+		name: "Thant",
+		nrc: "5/MaMaNa(N)12345",
+		email: "test5@gmail.com",
+		createdDate: "12/12/2021",
+		totalAccount: 2,
+	},
+	{
+		id: "6",
+		profile:
+			"https://images.unsplash.com/photo-1620428268482-cf1851a36764?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2FydG9vbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+		name: "Thant",
+		nrc: "5/MaMaNa(N)12345",
+		email: "test6@gmail.com",
+		createdDate: "12/12/2021",
+		totalAccount: 2,
+	},
+	{
+		id: "7",
+		profile:
+			"https://images.unsplash.com/photo-1620428268482-cf1851a36764?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2FydG9vbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+		name: "Thant",
+		nrc: "5/MaMaNa(N)12345",
+		email: "test7@gmail.com",
+		createdDate: "12/12/2021",
+		totalAccount: 2,
+	},
+	{
+		id: "8",
+		profile:
+			"https://images.unsplash.com/photo-1620428268482-cf1851a36764?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2FydG9vbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+		name: "Thant",
+		nrc: "5/MaMaNa(N)12345",
+		email: "test8@gmail.com",
+		createdDate: "12/12/2021",
+		totalAccount: 2,
+	},
+];
