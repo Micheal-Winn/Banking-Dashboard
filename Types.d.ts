@@ -24,3 +24,9 @@ interface TableData{
     createdDate:string,
     totalAccount:number
 }
+
+interface AccountTableData{
+    id:string,
+    type:string,
+    amount:number
+}

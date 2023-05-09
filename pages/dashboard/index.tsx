@@ -7,6 +7,8 @@ import React from 'react'
 import ProgressStatus from '@/components/charts/ProgressStatus'
 import ProgressBar from '@/components/charts/Demo';
 import CustomerTable from '@/components/Dashboard/CustomerTable';
+import AccountTable from '@/components/Dashboard/AccountTable';
+import Footer from '@/components/Footer/Footer';
 
 const TransactionChartDynamic = dynamic(() => import('@/components/charts/TransactionChart'), {ssr: false})
 const TransactionPieChartDynamic = dynamic(() => import('@/components/charts/TransactionPieChart'), {ssr: false})
@@ -51,7 +53,10 @@ const dashboard = () => {
 						</div>
 					</div>
 					<CustomerTable />
+					<AccountTable/>
+					
 				</div>
+				<Footer/>
 			</section>
 		</>
 	);

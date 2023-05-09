@@ -150,3 +150,32 @@ export const tableData: Array<TableData> = [
 		totalAccount: 2,
 	},
 ];
+
+
+export const accountTableData:Array<AccountTableData> = [
+	{
+		id:"ACCC00004",
+		type:"Saving",
+		amount:205.221
+	},
+	{
+		id:"ACCC00004",
+		type:"Saving",
+		amount:205.221
+	},
+	{
+		id:"ACCC00004",
+		type:"Saving",
+		amount:205.221
+	},
+	{
+		id:"ACCC00004",
+		type:"Saving",
+		amount:205.221
+	},
+	{
+		id:"ACCC00004",
+		type:"Saving",
+		amount:205.221
+	},
+]
