@@ -7,6 +7,7 @@ import {
   ActionIcon,
   Divider,
   Pagination,
+  rem
 } from "@mantine/core";
 import * as Avatar from "@radix-ui/react-avatar";
 import { IconDots, IconUserEdit, IconTrash } from "@tabler/icons-react";
@@ -21,6 +22,13 @@ const useStyles = createStyles((theme) => ({
         ? theme.fn.rgba(theme.colors[theme.primaryColor][7], 0.2)
         : theme.colors[theme.primaryColor][0],
   },
+  tr:{
+    fontWeight:"bold",
+
+    [theme.fn.smallerThan("lg")]:{
+      fontSize:"0.65rem"
+    }
+  }
 }));
 
 const CustomerTable = () => {
@@ -47,7 +55,7 @@ const CustomerTable = () => {
         className={cx({ [classes.rowSelected]: selected })}
         style={{ paddingLeft: 2 }}
       >
-        <td style={{ padding: "0.7rem 0.7rem 0.7rem 2rem" }}>
+        <td style={{ padding: "0.7rem 0.7rem 0.7rem 1rem" }}>
           <Checkbox
             checked={selection.includes(row.id)}
             onChange={() => toggleRow(row.id)}
@@ -77,7 +85,7 @@ const CustomerTable = () => {
         <td>{row.email}</td>
         <td>{row.createdDate}</td>
         <td>
-          <p className="text-center rounded-3xl overflow-hidden bg-blue-700 text-white  font-semibold py-2">
+          <p className="text-center flex items-center justify-center  rounded-3xl overflow-hidden bg-blue-700 text-white  font-semibold lg:py-[0.3rem] 2xl:py-2 lg:px-3 xl:px-0 2xl:px-0 2xl:text-[0.8rem] xl:text-[0.8rem] lg:text-[0.6rem]">
             Active
           </p>
         </td>
@@ -108,11 +116,11 @@ const CustomerTable = () => {
   });
 
   return (
-    <section className="mt-10 mr-14 mb-6 shadow-lg bg-white rounded-lg">
-      <Table miw={800} verticalSpacing={"sm"} pl={2}>
-        <thead>
-          <tr>
-            <th style={{ padding: "0.7rem 0.7rem 0.7rem 2rem" }}>
+    <section className="mt-10 lg:mr-7 xl:mr-10 2xl:mr-14 mb-6 shadow-lg bg-white rounded-lg">
+      <Table miw={400} verticalSpacing={"sm"} className="2xl:pl-4 xl:pl-0" fontSize={'xs'}>
+        <thead >
+          <tr className="text-[0.65rem]">
+            <th style={{ padding: "0.7rem 0.7rem 0.7rem 1rem"}}>
               <Checkbox
                 onChange={toggleAll}
                 indeterminate={
@@ -122,17 +130,17 @@ const CustomerTable = () => {
                 transitionDuration={0}
               />
             </th>
-            <th style={{ textAlign: "center" }} className="font-semibold">
-              CustomerId
+            <th style={{ textAlign: "center" }}  className="font-semibold ">
+              Customer ID
             </th>
-            <th className="font-semibold">Customer Name</th>
+            <th  className={"font-semibold"}>Customer Name</th>
             <th className="font-semibold">NRC</th>
-            <th className="font-semibold">Email</th>
-            <th className="font-semibold">Created Date</th>
+            <th className="font-semibold ">Email</th>
+            <th className="font-semibold ">Created Date</th>
             <th style={{ textAlign: "center" }} className="font-semibold">
               Status
             </th>
-            <th style={{ textAlign: "center" }} className="font-semibold">
+            <th style={{ textAlign: "center" }} className="font-semibold ">
               Total Account
             </th>
             <th>
@@ -147,8 +155,8 @@ const CustomerTable = () => {
         <tbody>{rows}</tbody>
       </Table>
       <Divider size="xs" />
-      <div className="w-[300px] ml-auto py-6">
-        <Pagination total={5}/>
+      <div className=" w-[300px] ml-auto py-6">
+        <Pagination total={5} size={"sm"}/>
       </div>
     </section>
   );

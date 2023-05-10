@@ -26,7 +26,7 @@ const AccountTable = () => {
     ))
 
   return (
-    <section className='bg-white rounded-lg shadow-lg mt-10 mb-6 max-w-[800px] mr-auto'>
+    <section className='bg-white rounded-lg shadow-lg mt-10 mb-6 max-w-[800px] mr-auto lg:mr-7 xl:mr-0'>
         <Table >
             <thead>
                 <tr>
@@ -40,7 +40,7 @@ const AccountTable = () => {
         <Divider size={'xs'}/>
         {/** change total according to the data */}
         <div className='w-[300px] ml-auto py-6'>
-          <Pagination total={5}/>
+          <Pagination total={5} size={'sm'}/>
         </div>
     </section>
   )

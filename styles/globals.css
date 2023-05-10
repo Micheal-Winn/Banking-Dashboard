@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+.fonts {
+    font-size: 0.65rem !important;
+  }

@@ -51,7 +51,7 @@ const mockdata = [
 
 const useStyles = createStyles((theme) => ({
   navbar: {
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : "#FBFBFB",
     paddingBottom: 0,
   },
 
@@ -94,7 +94,7 @@ export default function Sidebar({children}:any) {
   return (
     <section className='flex'>
       <div>
-      <Navbar height={"100vh"} width={{ sm: 300 }} p="md" className={classes.navbar}>
+      <Navbar height={"100vh"} width={{ sm: 300 ,md:215,lg:230}} p="md" className={classes.navbar}>
       <Navbar.Section className={classes.header}>
         <Group position="apart">
           <Logo width={rem(120)} />

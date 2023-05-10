@@ -16,14 +16,14 @@ const TransactionPieChartDynamic = dynamic(() => import('@/components/charts/Tra
 const dashboard = () => {
   return (
 		<>
-			<section className="h-screen bg-[#FBFBFB] overflow-y-scroll">
+			<section className="box-border h-screen bg-[#FBFBFB] overflow-y-scroll">
 				<Header />
-				<div className=" pl-10 ">
+				<div className=" 2xl:pl-10 xl:pl-5 lg:pl-8">
 					<Card />
-					<div className="flex gap-[2%] pr-2  box-border">
+					<div className="flex md:flex-col xl:flex-row lg:gap-6 xl:gap-[2%] lg:pr-7 xl:pr-0 2xl:pr-2  box-border">
 						<TransactionChartDynamic />
-						<div className="flex flex-col w-[45%] gap-4">
-							<div className="flex flex-col gap-4 py-3 px-3 rounded-lg mt-16 bg-white shadow-lg">
+						<div className="flex flex-col md:w-full xl:w-[45%] gap-4">
+							<div className="flex flex-col gap-4 py-3 px-3 rounded-lg xl:mt-6 2xl:mt-16 bg-white shadow-lg">
 								<div className="flex items-center justify-between gap-[5%] text-sm font-semibold">
 									<p className="w-[25%]">Customers</p>
 									<div className="w-[70%]">
