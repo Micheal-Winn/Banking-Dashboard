@@ -18,7 +18,7 @@ const AccountTable = () => {
 
 
     const rows = accountTableData.map((account)=>(
-        <tr key={account.id} className='hover:bg-gray-300'>
+        <tr key={account.id} className='hover:bg-gray-100'>
             <td  style={{padding:"0.7rem 0.7rem 0.7rem 2rem"}} className='font-semibold'>{account.id}</td>
             <td  style={{padding:"0.7rem 0.7rem 0.7rem 2rem"}} className='font-semibold'>{account.type}</td>
             <td  style={{padding:"0.7rem 0.7rem 0.7rem 2rem"}} className='font-semibold'>{account.amount}</td>
