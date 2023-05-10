@@ -3,7 +3,7 @@ import React from "react";
 
 const Card = () => {
   return (
-    <section className="grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-x-14 lg:gap-y-6  xl:gap-3 2xl:gap-6 w-full lg:pr-7 xl:pr-10 2xl:pr-20 mt-4">
+    <section className="grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-x-14 lg:gap-y-6  xl:gap-3 2xl:gap-6 w-full lg:pr-7 xl:pr-10 2xl:pr-12 mt-4">
       {AdminCards.map((card, index) => (
         <div
           key={index}

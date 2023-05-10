@@ -20,7 +20,7 @@ const dashboard = () => {
 				<Header />
 				<div className=" 2xl:pl-10 xl:pl-5 lg:pl-8">
 					<Card />
-					<div className="flex md:flex-col xl:flex-row lg:gap-6 xl:gap-[2%] lg:pr-7 xl:pr-0 2xl:pr-2  box-border">
+					<div className="flex md:flex-col xl:flex-row lg:gap-6 xl:gap-[2%] lg:pr-7 xl:pr-0 2xl:pr-1 box-border">
 						<TransactionChartDynamic />
 						<div className="flex flex-col md:w-full xl:w-[45%] gap-4">
 							<div className="flex flex-col gap-4 py-3 px-3 rounded-lg xl:mt-6 2xl:mt-16 bg-white shadow-lg">

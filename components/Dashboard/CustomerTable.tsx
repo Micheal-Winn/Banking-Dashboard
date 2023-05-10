@@ -131,7 +131,8 @@ const CustomerTable = () => {
               />
             </th>
             <th style={{ textAlign: "center" }}  className="font-semibold ">
-              Customer ID
+              <p className="xl:hidden block">ID</p>
+              <p className="xl:block hidden">Customer ID</p>
             </th>
             <th  className={"font-semibold"}>Customer Name</th>
             <th className="font-semibold">NRC</th>
