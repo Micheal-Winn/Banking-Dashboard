@@ -52,17 +52,17 @@ const CustomerTable = () => {
     return (
       <tr
         key={row.id}
-        className={cx({ [classes.rowSelected]: selected })}
+        className={'hover:scale-100'}
         style={{ paddingLeft: 2 }}
       >
-        <td style={{ padding: "0.7rem 0.7rem 0.7rem 1rem" }}>
+        {/* <td style={{ padding: "0.7rem 0.7rem 0.7rem 1rem" }}>
           <Checkbox
             checked={selection.includes(row.id)}
             onChange={() => toggleRow(row.id)}
             transitionDuration={0}
           />
-        </td>
-        <td className="text-center">{row.id}</td>
+        </td> */}
+        <td className="text-center font-bold">{row.id}</td>
         <td>
           <div className="flex gap-1 items-center">
             <Avatar.Root className="bg-blackA3 inline-flex h-[35px] w-[35px] select-none items-center justify-center overflow-hidden rounded-full align-middle">
@@ -78,14 +78,14 @@ const CustomerTable = () => {
                 CT
               </Avatar.Fallback>
             </Avatar.Root>
-            <p>{row.name}</p>
+            <p className="font-semibold">{row.name}</p>
           </div>
         </td>
-        <td>{row.nrc}</td>
-        <td>{row.email}</td>
-        <td>{row.createdDate}</td>
+        <td className="font-semibold">{row.nrc}</td>
+        <td className="font-semibold">{row.email}</td>
+        <td className="font-semibold">{row.createdDate}</td>
         <td>
-          <p className="text-center flex items-center justify-center  rounded-3xl overflow-hidden bg-blue-700 text-white  font-semibold lg:py-[0.3rem] 2xl:py-2 lg:px-3 xl:px-0 2xl:px-0 2xl:text-[0.8rem] xl:text-[0.8rem] lg:text-[0.6rem]">
+          <p className="text-center flex items-center justify-center  rounded-2xl overflow-hidden border-[1px] border-blue-700 text-blue-700  font-semibold lg:py-[0.3rem] 2xl:py-2 lg:px-3 xl:px-0 2xl:px-1 2xl:text-[0.9rem] xl:text-[0.8rem] lg:text-[0.6rem]">
             Active
           </p>
         </td>
@@ -117,10 +117,10 @@ const CustomerTable = () => {
 
   return (
     <section className="mt-10 lg:mr-7 xl:mr-10 2xl:mr-14 mb-6 shadow-lg bg-white rounded-lg">
-      <Table miw={400} verticalSpacing={"sm"} className="2xl:pl-4 xl:pl-0" fontSize={'xs'}>
+      <Table miw={400} verticalSpacing={"sm"} className="2xl:pl-4 xl:pl-0 " style={{fontWeight:"bold"}} fontSize={'sm'}>
         <thead >
           <tr className="text-[0.65rem]">
-            <th style={{ padding: "0.7rem 0.7rem 0.7rem 1rem"}}>
+            {/* <th style={{ padding: "0.7rem 0.7rem 0.7rem 1rem"}}>
               <Checkbox
                 onChange={toggleAll}
                 indeterminate={
@@ -129,35 +129,35 @@ const CustomerTable = () => {
                 checked={selection.length === tableData.length}
                 transitionDuration={0}
               />
-            </th>
-            <th style={{ textAlign: "center" }}  className="font-semibold ">
-              <p className="xl:hidden block">ID</p>
+            </th> */}
+            <th style={{ textAlign: "center" }}  className="font-bold ">
+              {/* <p className="xl:hidden block">ID</p> */}
               <p className="xl:block hidden">Customer ID</p>
             </th>
-            <th  className={"font-semibold"}>Customer Name</th>
-            <th className="font-semibold">NRC</th>
-            <th className="font-semibold ">Email</th>
-            <th className="font-semibold ">Created Date</th>
-            <th style={{ textAlign: "center" }} className="font-semibold">
+            <th  className={"font-bold"}>Customer Name</th>
+            <th className="font-bold">NRC</th>
+            <th className="font-bold ">Email</th>
+            <th className="font-bold ">Created Date</th>
+            <th style={{ textAlign: "center" }} className="font-bold">
               Status
             </th>
-            <th style={{ textAlign: "center" }} className="font-semibold ">
+            <th style={{ textAlign: "center" }} className="font-bold ">
               Total Account
             </th>
             <th>
-              {selection.length >= 2 && (
+              {/* {selection.length >= 2 && (
                 <ActionIcon>
                   <IconTrash color="red" />
                 </ActionIcon>
-              )}
+              )} */}
             </th>
           </tr>
         </thead>
         <tbody>{rows}</tbody>
       </Table>
       <Divider size="xs" />
-      <div className=" w-[300px] ml-auto py-6">
-        <Pagination total={5} size={"sm"}/>
+      <div className=" w-[400px] ml-auto py-6">
+        <Pagination total={5} size={"lg"}/>
       </div>
     </section>
   );

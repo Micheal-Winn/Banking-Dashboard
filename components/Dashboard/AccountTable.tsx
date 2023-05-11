@@ -39,8 +39,8 @@ const AccountTable = () => {
         </Table>
         <Divider size={'xs'}/>
         {/** change total according to the data */}
-        <div className='w-[300px] ml-auto py-6'>
-          <Pagination total={5} size={'sm'}/>
+        <div className='w-[400px] ml-auto py-6'>
+          <Pagination total={5} size={'lg'}/>
         </div>
     </section>
   )

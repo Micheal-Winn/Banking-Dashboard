@@ -70,7 +70,7 @@ export const AdminCards:Array<UserCardListInfo> = [
 
 export const tableData: Array<TableData> = [
 	{
-		id: "1",
+		id: "CUS000001",
 		profile:
 			"https://images.unsplash.com/photo-1620428268482-cf1851a36764?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2FydG9vbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
 		name: "Thant",
