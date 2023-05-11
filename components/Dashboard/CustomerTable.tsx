@@ -7,6 +7,7 @@ import {
   ActionIcon,
   Divider,
   Pagination,
+  ScrollArea,
   rem
 } from "@mantine/core";
 import * as Avatar from "@radix-ui/react-avatar";
@@ -52,8 +53,8 @@ const CustomerTable = () => {
     return (
       <tr
         key={row.id}
-        className={'hover:scale-100'}
         style={{ paddingLeft: 2 }}
+        className=""
       >
         {/* <td style={{ padding: "0.7rem 0.7rem 0.7rem 1rem" }}>
           <Checkbox
@@ -62,7 +63,7 @@ const CustomerTable = () => {
             transitionDuration={0}
           />
         </td> */}
-        <td className="text-center font-bold">{row.id}</td>
+        <td className="text-center font-bold text-xs">{row.id}</td>
         <td>
           <div className="flex gap-1 items-center">
             <Avatar.Root className="bg-blackA3 inline-flex h-[35px] w-[35px] select-none items-center justify-center overflow-hidden rounded-full align-middle">
@@ -82,10 +83,10 @@ const CustomerTable = () => {
           </div>
         </td>
         <td className="font-semibold">{row.nrc}</td>
-        <td className="font-semibold">{row.email}</td>
+        {/* <td className="font-semibold">{row.email}</td> */}
         <td className="font-semibold">{row.createdDate}</td>
         <td>
-          <p className="text-center flex items-center justify-center  rounded-2xl overflow-hidden border-[1px] border-blue-700 text-blue-700  font-semibold lg:py-[0.3rem] 2xl:py-2 lg:px-3 xl:px-0 2xl:px-1 2xl:text-[0.9rem] xl:text-[0.8rem] lg:text-[0.6rem]">
+          <p className="text-center flex items-center justify-center  rounded-2xl overflow-hidden border-[1px] border-blue-700 text-blue-700  font-semibold sm:py-1 lg:py-[0.3rem] 2xl:py-2 sm:px-2  lg:px-3 xl:px-0 2xl:px-1 2xl:text-[0.9rem] xl:text-[0.8rem] lg:text-[0.6rem]">
             Active
           </p>
         </td>
@@ -116,8 +117,9 @@ const CustomerTable = () => {
   });
 
   return (
-    <section className="mt-10 lg:mr-7 xl:mr-10 2xl:mr-14 mb-6 shadow-lg bg-white rounded-lg">
-      <Table miw={400} verticalSpacing={"sm"} className="2xl:pl-4 xl:pl-0 " style={{fontWeight:"bold"}} fontSize={'sm'}>
+    <section className="mt-10 sm:mr-5 md:mr-6 lg:mr-7 xl:mr-10 2xl:mr-14 mb-6 shadow-lg bg-white rounded-lg">
+      <ScrollArea w={{}}  type="always">
+      <Table miw={800} verticalSpacing={"sm"} className="2xl:pl-4 xl:pl-0 " style={{fontWeight:"bold"}} fontSize={'sm'}>
         <thead >
           <tr className="text-[0.65rem]">
             {/* <th style={{ padding: "0.7rem 0.7rem 0.7rem 1rem"}}>
@@ -132,11 +134,11 @@ const CustomerTable = () => {
             </th> */}
             <th style={{ textAlign: "center" }}  className="font-bold ">
               {/* <p className="xl:hidden block">ID</p> */}
-              <p className="xl:block hidden">Customer ID</p>
+              <p className="">Customer ID</p>
             </th>
             <th  className={"font-bold"}>Customer Name</th>
             <th className="font-bold">NRC</th>
-            <th className="font-bold ">Email</th>
+            {/* <th className="font-bold ">Email</th> */}
             <th className="font-bold ">Created Date</th>
             <th style={{ textAlign: "center" }} className="font-bold">
               Status
@@ -155,6 +157,7 @@ const CustomerTable = () => {
         </thead>
         <tbody>{rows}</tbody>
       </Table>
+      </ScrollArea>
       <Divider size="xs" />
       <div className=" w-[400px] ml-auto py-6">
         <Pagination total={5} size={"lg"}/>

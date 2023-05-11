@@ -15,7 +15,7 @@ const ProgressBar = ({progress,color}:ProgressTypes) => {
 
   return (
     <Progress.Root
-      className="relative overflow-hidden bg-blackA9 rounded-full w-full lg:h-[6px] 2xl:h-[3px]"
+      className="relative overflow-hidden bg-blackA9 rounded-full w-full sm:h-[7px] lg:h-[6px] 2xl:h-[3px]"
       style={{
         // Fix overflow clipping in Safari
         // https://gist.github.com/domske/b66047671c780a238b51c51ffde8d3a0

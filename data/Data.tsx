@@ -73,7 +73,7 @@ export const tableData: Array<TableData> = [
 		id: "CUS000001",
 		profile:
 			"https://images.unsplash.com/photo-1620428268482-cf1851a36764?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y2FydG9vbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
-		name: "Thant",
+		name: "Thant Zin Win",
 		nrc: "5/MaMaNa(N)12345",
 		email: "test1@gmail.com",
 		createdDate: "12/12/2021",

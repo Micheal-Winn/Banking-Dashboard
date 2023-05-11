@@ -97,7 +97,7 @@ export default function Sidebar({children}:any) {
   return (
     <section className='flex'>
       <div>
-      <Navbar height={"100vh"} width={{ sm: 300 ,md:215,lg:230,xl:300}} p="md" className={classes.navbar}>
+      <Navbar height={"100vh"} width={{ sm: 175 ,md:215,lg:230,xl:300}} p="md" className={classes.navbar}>
       <Navbar.Section className={classes.header}>
         <Group position="apart">
           <Logo width={rem(120)} />

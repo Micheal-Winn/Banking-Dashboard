@@ -26,7 +26,7 @@ const AccountTable = () => {
     ))
 
   return (
-    <section className='bg-white rounded-lg shadow-lg mt-10 mb-6 max-w-[800px] mr-auto lg:mr-7 xl:mr-0'>
+    <section className='bg-white rounded-lg shadow-lg mt-10 mb-6 max-w-[800px] mr-auto sm:mr-5 md:mr-6 lg:mr-7 xl:mr-0'>
         <Table >
             <thead>
                 <tr>

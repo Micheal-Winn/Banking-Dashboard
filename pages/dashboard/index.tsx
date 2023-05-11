@@ -18,32 +18,32 @@ const dashboard = () => {
 		<>
 			<section className="box-border h-screen bg-[#FBFBFB] overflow-y-scroll">
 				<Header />
-				<div className=" 2xl:pl-10 xl:pl-5 lg:pl-8">
+				<div className=" 2xl:pl-10 xl:pl-5 lg:pl-8 md:pl-5 sm:pl-6">
 					<Card />
-					<div className="flex md:flex-col xl:flex-row lg:gap-6 xl:gap-[2%] lg:pr-7 xl:pr-0 2xl:pr-1 box-border">
+					<div className="flex flex-col xl:flex-row sm:gap-6 md:gap-8 lg:gap-6 xl:gap-[2%] sm:pr-7 md:pr-6 lg:pr-7 xl:pr-0 2xl:pr-1 box-border">
 						<TransactionChartDynamic />
 						<div className="flex flex-col md:w-full xl:w-[45%] gap-4">
 							<div className="flex flex-col gap-4 py-3 px-3 rounded-lg xl:mt-6 2xl:mt-16 bg-white shadow-lg">
 								<div className="flex items-center justify-between gap-[5%] text-sm font-semibold">
-									<p className="w-[25%]">Customers</p>
+									<p className="w-[25%] sm:text-[0.8rem] md:text-base">Customers</p>
 									<div className="w-[70%]">
 										<ProgressBar progress={10} color="bg-blue-700" />
 									</div>
 								</div>
 								<div className="flex items-center gap-[5%] text-sm font-semibold">
-									<p className="w-[25%]">Total Accounts</p>
+									<p className="w-[25%] sm:text-[0.8rem] md:text-base">Total Accounts</p>
 									<div className="w-[70%]">
 										<ProgressBar progress={20} color="bg-[#FE9520]" />
 									</div>
 								</div>
 								<div className="flex items-center gap-[5%] text-sm font-semibold">
-									<p className="w-[25%]">Deposit Accounts</p>
+									<p className="w-[25%] sm:text-[0.8rem] md:text-base">Deposit Accounts</p>
 									<div className="w-[70%]">
 										<ProgressBar progress={40} color="bg-[#BE1FE5]" />
 									</div>
 								</div>
 								<div className="flex items-center gap-[5%] text-sm font-semibold">
-									<p className='w-[25%]'>Transaction Accounts</p>
+									<p className='w-[25%] sm:text-[0.8rem] md:text-base'>Transaction Accounts</p>
 									<div className='w-[70%]'>
 										<ProgressBar progress={80} color="bg-[#20C394]" />
 									</div>
