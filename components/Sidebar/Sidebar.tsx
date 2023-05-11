@@ -96,7 +96,7 @@ export default function Sidebar({children}:any) {
 
   return (
     <section className='flex'>
-      <div>
+      <div className='hidden sm:block'>
       <Navbar height={"100vh"} width={{ sm: 175 ,md:215,lg:230,xl:300}} p="md" className={classes.navbar}>
       <Navbar.Section className={classes.header}>
         <Group position="apart">

@@ -6,7 +6,7 @@ export default function Searchbar(props: TextInputProps) {
 
   return (
 
-    <div className='w-[30%]'>
+    <div className='w-[45%] sm:w-[30%]'>
       <Input
         icon={<IconSearch size={16} stroke={1.5} />}
         radius="xl"

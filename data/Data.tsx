@@ -1,3 +1,7 @@
+import { AccountTableData, MobileNavLists, NavLink, TableData, UserCardListInfo } from "@/Types";
+import {IconBellRinging,IconMessage,IconChevronRight} from "@tabler/icons-react"
+
+
 export const NavbarLinks:Array<NavLink> = [
     {
         label:"Main Menu",
@@ -178,4 +182,56 @@ export const accountTableData:Array<AccountTableData> = [
 		type:"Saving",
 		amount:205.221
 	},
+];
+
+export const mobileLists : Array<MobileNavLists> = [
+	{
+		id:"1",
+		name:"Dashboard",
+		path:"/"
+	},
+	{
+		id:"2",
+		name:"My Wallet",
+		path:"/",
+		icon:<IconChevronRight size="1rem" stroke={1.5}/>,
+		nested:[
+			{
+				id:"wall1",
+				name:"overview",
+				path:"/overview"
+			}
+		]
+	},
+	{
+		id:"3",
+		name:"Transaction",
+		path:"/transaction",
+		icon:<IconChevronRight size="1rem" stroke={1.5}/>,
+		nested:[
+			{
+				id:"trans1",
+				name:"Comint",
+				path:"/transaction"
+			}
+		]
+	},
+	{
+		id:"4",
+		name:"Setting",
+		path:"/setting"
+	},
+	{
+		id:"5",
+		name:"Notification",
+		path:"/noti",
+		icon:<IconBellRinging size="1rem" stroke={1.5}/>
+	},
+	{
+		id:"6",
+		name:"Message",
+		path:"/message",
+		icon:<IconMessage size="1rem" stroke={1.5}/>
+	},
+	
 ]

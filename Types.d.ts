@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 interface Link {
     link:string,
     subLinks:Array<string>
@@ -29,4 +31,18 @@ interface AccountTableData{
     id:string,
     type:string,
     amount:number
+}
+
+interface nested{
+    id:string,
+    name:string,
+    path:string,
+}
+
+interface MobileNavLists{
+    id:string,
+    name:string,
+    path:string,
+    icon?:TablerIconsProps,
+    nested?:Array<nested>
 }
