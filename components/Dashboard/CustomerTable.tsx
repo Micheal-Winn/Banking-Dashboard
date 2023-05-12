@@ -8,7 +8,8 @@ import {
   Divider,
   Pagination,
   ScrollArea,
-  rem
+  rem,
+  MediaQuery
 } from "@mantine/core";
 import * as Avatar from "@radix-ui/react-avatar";
 import { IconDots, IconUserEdit, IconTrash } from "@tabler/icons-react";
@@ -86,7 +87,7 @@ const CustomerTable = () => {
         {/* <td className="font-semibold">{row.email}</td> */}
         <td className="font-semibold">{row.createdDate}</td>
         <td>
-          <p className="text-center flex items-center justify-center  rounded-2xl overflow-hidden border-[1px] border-blue-700 text-blue-700  font-semibold sm:py-1 lg:py-[0.3rem] 2xl:py-2 sm:px-2  lg:px-3 xl:px-0 2xl:px-1 2xl:text-[0.9rem] xl:text-[0.8rem] lg:text-[0.6rem]">
+          <p className="text-center flex items-center justify-center  rounded-2xl overflow-hidden border-[1px] border-blue-700 text-blue-700  font-semibold py-1 sm:py-1 lg:py-[0.3rem] 2xl:py-2 px-1 sm:px-2  lg:px-3 xl:px-0 2xl:px-1 2xl:text-[0.9rem] xl:text-[0.8rem] lg:text-[0.6rem]">
             Active
           </p>
         </td>
@@ -117,12 +118,18 @@ const CustomerTable = () => {
   });
 
   return (
-    <section className="mt-10 sm:mr-5 md:mr-6 lg:mr-7 xl:mr-10 2xl:mr-14 mb-6 shadow-lg bg-white rounded-lg">
-      <ScrollArea w={{}}  type="always">
-      <Table miw={800} verticalSpacing={"sm"} className="2xl:pl-4 xl:pl-0 " style={{fontWeight:"bold"}} fontSize={'sm'}>
-        <thead >
-          <tr className="text-[0.65rem]">
-            {/* <th style={{ padding: "0.7rem 0.7rem 0.7rem 1rem"}}>
+		<section className="mt-10 mr-5 sm:mr-5 md:mr-6 lg:mr-7 xl:mr-10 2xl:mr-14 mb-6 shadow-lg bg-white rounded-lg">
+			<ScrollArea w={{}} type="always">
+				<Table
+					miw={800}
+					verticalSpacing={"sm"}
+					className="2xl:pl-4 xl:pl-0 "
+					style={{ fontWeight: "bold" }}
+					fontSize={"sm"}
+				>
+					<thead>
+						<tr className="text-[0.65rem]">
+							{/* <th style={{ padding: "0.7rem 0.7rem 0.7rem 1rem"}}>
               <Checkbox
                 onChange={toggleAll}
                 indeterminate={
@@ -132,38 +139,45 @@ const CustomerTable = () => {
                 transitionDuration={0}
               />
             </th> */}
-            <th style={{ textAlign: "center" }}  className="font-bold ">
-              {/* <p className="xl:hidden block">ID</p> */}
-              <p className="">Customer ID</p>
-            </th>
-            <th  className={"font-bold"}>Customer Name</th>
-            <th className="font-bold">NRC</th>
-            {/* <th className="font-bold ">Email</th> */}
-            <th className="font-bold ">Created Date</th>
-            <th style={{ textAlign: "center" }} className="font-bold">
-              Status
-            </th>
-            <th style={{ textAlign: "center" }} className="font-bold ">
-              Total Account
-            </th>
-            <th>
-              {/* {selection.length >= 2 && (
+							<th style={{ textAlign: "center" }} className="font-bold ">
+								{/* <p className="xl:hidden block">ID</p> */}
+								<p className="">Customer ID</p>
+							</th>
+							<th className={"font-bold"}>Customer Name</th>
+							<th className="font-bold">NRC</th>
+							{/* <th className="font-bold ">Email</th> */}
+							<th className="font-bold ">Created Date</th>
+							<th style={{ textAlign: "center" }} className="font-bold">
+								Status
+							</th>
+							<th style={{ textAlign: "center" }} className="font-bold ">
+								Total Account
+							</th>
+							<th>
+								{/* {selection.length >= 2 && (
                 <ActionIcon>
                   <IconTrash color="red" />
                 </ActionIcon>
               )} */}
-            </th>
-          </tr>
-        </thead>
-        <tbody>{rows}</tbody>
-      </Table>
-      </ScrollArea>
-      <Divider size="xs" />
-      <div className=" w-[400px] ml-auto py-6">
-        <Pagination total={5} size={"lg"}/>
-      </div>
-    </section>
-  );
+							</th>
+						</tr>
+					</thead>
+					<tbody>{rows}</tbody>
+				</Table>
+			</ScrollArea>
+			<Divider size="xs" />
+			<MediaQuery largerThan="sm" styles={{ display: "none" }}>
+				<div className=" w-[250px] ml-auto py-6">
+					<Pagination total={5} size={"sm"} />
+				</div>
+			</MediaQuery>
+			<MediaQuery smallerThan={"sm"} styles={{ display: "none" }}>
+				<div className=" w-[400px] ml-auto py-6">
+					<Pagination total={5} size={"lg"} />
+				</div>
+			</MediaQuery>
+		</section>
+	);
 };
 
 export default CustomerTable;

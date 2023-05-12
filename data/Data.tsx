@@ -221,17 +221,17 @@ export const mobileLists : Array<MobileNavLists> = [
 		name:"Setting",
 		path:"/setting"
 	},
-	{
-		id:"5",
-		name:"Notification",
-		path:"/noti",
-		icon:<IconBellRinging size="1rem" stroke={1.5}/>
-	},
-	{
-		id:"6",
-		name:"Message",
-		path:"/message",
-		icon:<IconMessage size="1rem" stroke={1.5}/>
-	},
+	// {
+	// 	id:"5",
+	// 	name:"Notification",
+	// 	path:"/noti",
+	// 	icon:<IconBellRinging size="1rem" stroke={1.5}/>
+	// },
+	// {
+	// 	id:"6",
+	// 	name:"Message",
+	// 	path:"/message",
+	// 	icon:<IconMessage size="1rem" stroke={1.5}/>
+	// },
 	
 ]

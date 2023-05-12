@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Table,createStyles,Pagination, Divider } from '@mantine/core'
+import { Table,createStyles,Pagination, Divider, MediaQuery } from '@mantine/core'
 import { accountTableData } from '@/data/Data';
 
 //later below codes will be deprecated
@@ -26,24 +26,46 @@ const AccountTable = () => {
     ))
 
   return (
-    <section className='bg-white rounded-lg shadow-lg mt-10 mb-6 max-w-[800px] mr-auto sm:mr-5 md:mr-6 lg:mr-7 xl:mr-0'>
-        <Table >
-            <thead>
-                <tr>
-                    <th style={{padding:"0.7rem 0.7rem 0.7rem 2rem"}} className='font-semibold'>Account No</th>
-                    <th style={{padding:"0.7rem 0.7rem 0.7rem 2rem"}} className='font-semibold'>Account Type</th>
-                    <th style={{padding:"0.7rem 0.7rem 0.7rem 2rem"}} className='font-semibold'>Total Amount</th>
-                </tr>
-            </thead>
-            <tbody>{rows}</tbody>
-        </Table>
-        <Divider size={'xs'}/>
-        {/** change total according to the data */}
-        <div className='w-[400px] ml-auto py-6'>
-          <Pagination total={5} size={'lg'}/>
-        </div>
-    </section>
-  )
+		<section className="bg-white rounded-lg shadow-lg mt-10 mb-6 max-w-[800px] mr-auto mr-5 md:mr-6 lg:mr-7 xl:mr-0">
+			<Table>
+				<thead>
+					<tr>
+						<th
+							style={{ padding: "0.7rem 0.7rem 0.7rem 2rem" }}
+							className="font-semibold"
+						>
+							Account No
+						</th>
+						<th
+							style={{ padding: "0.7rem 0.7rem 0.7rem 2rem" }}
+							className="font-semibold"
+						>
+							Account Type
+						</th>
+						<th
+							style={{ padding: "0.7rem 0.7rem 0.7rem 2rem" }}
+							className="font-semibold"
+						>
+							Total Amount
+						</th>
+					</tr>
+				</thead>
+				<tbody>{rows}</tbody>
+			</Table>
+			<Divider size={"xs"} />
+			{/** change total according to the data */}
+			<MediaQuery largerThan="sm" styles={{ display: "none" }}>
+				<div className=" w-[250px] ml-auto py-6">
+					<Pagination total={5} size={"sm"} />
+				</div>
+			</MediaQuery>
+			<MediaQuery smallerThan={"sm"} styles={{ display: "none" }}>
+				<div className=" w-[400px] ml-auto py-6">
+					<Pagination total={5} size={"lg"} />
+				</div>
+			</MediaQuery>
+		</section>
+	);
 }
 
 export default AccountTable
