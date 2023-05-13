@@ -3,13 +3,17 @@ import ReactApexChart from 'react-apexcharts'
 
 const TransactionPieChart = () => {
   return (
-    <section className='w-[100%]  bg-white overflow-hidden rounded-lg shadow-lg lg:pt-2'>
+    <section className='w-[100%]  bg-white overflow-hidden rounded-lg shadow-lg py-10 lg:pt-2 '>
         <ReactApexChart
             type='donut'
             height={310}
             series={[9,3,10,37]}
             options={{
                 labels:["Customers","Accounts","Deposit Account","Transaction"],
+                chart:{
+                    type:"donut",
+                    
+                },
                 tooltip:{
                     y:{
                         formatter:(val)=>{
@@ -24,15 +28,23 @@ const TransactionPieChart = () => {
                                 show:true,
                                 total:{
                                     show:true,
-                                    fontSize:"20px",
-                                    color:"#1D4ED8"
-                                }
-                            }
-                        }
-                    }
+                                    fontSize:"16px",
+                                    color:"#1D4ED8",
+                                   
+                                },
+                               name:{
+                                show:false
+                               } 
+                            },
+                            
+                        },
+                        
+                    },
+
                 },
                 dataLabels:{
-                    enabled:false
+                    enabled:false,
+                    
                 },
                 title:{
                     text:"Pie Chart",
@@ -49,7 +61,9 @@ const TransactionPieChart = () => {
                 },
                 stroke:{
                     curve:"smooth"
-                }
+                },
+                
+                
             }}
         />
     </section>

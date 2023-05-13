@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Table,createStyles,Pagination, Divider, MediaQuery } from '@mantine/core'
+import { Table,createStyles,Pagination, Divider, MediaQuery ,ScrollArea} from '@mantine/core'
 import { accountTableData } from '@/data/Data';
 
 //later below codes will be deprecated
@@ -26,8 +26,9 @@ const AccountTable = () => {
     ))
 
   return (
-		<section className="bg-white rounded-lg shadow-lg mt-10 mb-6 max-w-[800px] mr-auto mr-5 md:mr-6 lg:mr-7 xl:mr-0">
-			<Table>
+		<section className="bg-white rounded-lg shadow-lg mt-10 mb-6 max-w-[800px] 2xl:mr-auto mr-5 md:mr-6 lg:mr-7 xl:mr-0">
+			<ScrollArea type='always'>
+			<Table fontSize={"xs"}>
 				<thead>
 					<tr>
 						<th
@@ -64,6 +65,7 @@ const AccountTable = () => {
 					<Pagination total={5} size={"lg"} />
 				</div>
 			</MediaQuery>
+			</ScrollArea>
 		</section>
 	);
 }

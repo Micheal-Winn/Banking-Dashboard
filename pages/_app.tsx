@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={`${inter.className} min-[2000px]:container mx-auto bg-[#FBFBFB]`}>
+    <main className={`${inter.className} min-[2000px]:container mx-auto bg-[#FBFBFB`}>
      <MantineProvider withGlobalStyles>
        <Sidebar>
        <Component {...pageProps} />

@@ -87,7 +87,7 @@ const CustomerTable = () => {
         {/* <td className="font-semibold">{row.email}</td> */}
         <td className="font-semibold">{row.createdDate}</td>
         <td>
-          <p className="text-center flex items-center justify-center  rounded-2xl overflow-hidden border-[1px] border-blue-700 text-blue-700  font-semibold py-1 sm:py-1 lg:py-[0.3rem] 2xl:py-2 px-1 sm:px-2  lg:px-3 xl:px-0 2xl:px-1 2xl:text-[0.9rem] xl:text-[0.8rem] lg:text-[0.6rem]">
+          <p className="text-center flex items-center justify-center  rounded-2xl overflow-hidden border-[1px] border-blue-700 text-blue-700  font-semibold py-1 sm:py-1 lg:py-[0.3rem] 2xl:py-2 px-1 sm:px-2  lg:px-3 xl:px-0 2xl:px-0 2xl:text-[0.9rem] xl:text-[0.8rem] lg:text-[0.6rem]">
             Active
           </p>
         </td>
@@ -118,14 +118,14 @@ const CustomerTable = () => {
   });
 
   return (
-		<section className="mt-10 mr-5 sm:mr-5 md:mr-6 lg:mr-7 xl:mr-10 2xl:mr-14 mb-6 shadow-lg bg-white rounded-lg">
+		<section className="mt-10 mr-5 sm:mr-5 md:mr-6 lg:mr-7 xl:mr-10 2xl:mr-14 mb-6 shadow-lg bg-white rounded-lg text-xs">
 			<ScrollArea w={{}} type="always">
 				<Table
 					miw={800}
 					verticalSpacing={"sm"}
 					className="2xl:pl-4 xl:pl-0 "
 					style={{ fontWeight: "bold" }}
-					fontSize={"sm"}
+					fontSize={"xs"}
 				>
 					<thead>
 						<tr className="text-[0.65rem]">

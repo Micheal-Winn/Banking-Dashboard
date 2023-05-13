@@ -95,9 +95,9 @@ export default function Sidebar({children}:any) {
   const links = mockdata.map((item) => <LinksGroup {...item} key={item.label} />);
 
   return (
-    <section className='flex'>
+    <section className='flex h-screen'>
       <div className='hidden sm:block'>
-      <Navbar height={"100vh"} width={{ sm: 175 ,md:215,lg:230,xl:300}} p="md" className={classes.navbar}>
+      <Navbar  width={{ sm: 175 ,md:215,lg:230,xl:300}} p="md" className={classes.navbar}>
       <Navbar.Section className={classes.header}>
         <Group position="apart">
           <Logo width={rem(120)} />
@@ -118,7 +118,7 @@ export default function Sidebar({children}:any) {
       </Navbar.Section>
     </Navbar>
       </div>
-      <main className='w-full'>{children}</main>
+      <main className='w-screen'>{children}</main>
     </section>
   );
 }

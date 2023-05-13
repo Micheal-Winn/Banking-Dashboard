@@ -31,7 +31,7 @@ const Header = () => {
 						padding: 0,
 					},
 				}}
-				className="h-screen"
+				
 			>
 				<div className="flex flex-col justify-between h-[90vh]">
 					<div>
@@ -62,21 +62,19 @@ const Header = () => {
 								rightSection={<IconBellRinging size={"1.2rem"} />}
 								className="px-5 font-semibold"
 							/>
-							<p className="bg-[#228BE6] rounded-full px-2 py-1 text-white text-[0.6rem]">
+							<p className="bg-[#228BE6] rounded-full px-2 pt-[0.28rem] pb-[0.2rem] text-white text-[0.56rem]">
 								2
 							</p>
-							{/* <div position='apart'>
-              <div
-            </div> */}
+						
 						</div>
-						<div className="flex items-center pr-8  hover:bg-slate-50">
+						<div className="flex items-center justify-center pr-8  hover:bg-slate-50">
 							<NavLink
 								label="Message"
 								rightSection={<IconMessage size={"1.2rem"} />}
 								className="px-5 font-semibold"
 							/>
-							<p className="bg-[#228BE6] rounded-full px-2 py-1 text-white text-[0.6rem]">
-								2
+							<p className="box-border bg-[#228BE6] rounded-full px-2 pt-[0.28rem] pb-[0.2rem] text-white text-[0.56rem]">
+								24
 							</p>
 						</div>
 					</div>
