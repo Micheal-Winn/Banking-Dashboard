@@ -3,6 +3,7 @@ import { useForm, FieldError } from "react-hook-form";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { IconCheck,IconEye,IconEyeOff } from "@tabler/icons-react";
 import UserInput from "./UserInput";
+import Image from "next/image";
 
 const Auth = () => {
   const {
@@ -29,16 +30,18 @@ const Auth = () => {
   }
 
   return (
-    <main>
-      <section className="b h-screen pt-3">
-        <h1 className="pl-6 text-xl font-bold">Smart Save</h1>
-        <h2 className="text-center mt-28 text-xl font-semibold mb-5">Sign in to Smart Save</h2>
-        <h3 className="text-center mb-8 text-xs font-medium text-gray-400">Send,spend and save smarter</h3>
+    <main className="flex lg:bg-white">
+      <section className="b h-screen  pt-3 flex flex-col justify-between w-full lg:w-1/2">
+      <h1 className="pl-6 2xl:pl-12 text-transparent text-xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-bold bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text">Smart Save</h1>
+        <div className="2xl:flex 2xl:flex-col 2xl:justify-center 2xl:items-center 2xl:h-full 2xl:w-ful">
+       
+        <h2 className="text-center mt-0 2xl:mt-0 2xl:mb-10 text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl font-semibold mb-5 text-blue-700">Sign in to Smart Save</h2>
+        <h3 className="text-center mb-6 text-xs md:text-sm lg:text-xs xl:text-sm font-medium text-gray-400">Send,spend and save smarter</h3>
 
         {/**form */}
         <form
           onSubmit={handleSubmit(() => {})}
-          className="grid grid-cols-1 w-[70%] mx-auto gap-2 "
+          className="grid grid-cols-1 w-[70%] sm:w-[50%] lg:w-[75%] xl:w-[60%] 2xl:w-[45%] mx-auto gap-2 "
         >
           {isLogin && (
             <UserInput
@@ -47,7 +50,7 @@ const Auth = () => {
               required: { value: true, message: "username must not be empty" },
               minLength: {
                 value: 2,
-                message: "must be at least two characters long",
+                message: "Username must be at least two characters long",
               },
               pattern: {
                 value: /^[A-Za-z0-9_]+$/g,
@@ -65,7 +68,7 @@ const Auth = () => {
               required: { value: true, message: "email must not be empty" },
               pattern: {
                 value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g,
-                message: "please provide a valid email.",
+                message: "please provide a valid email address.",
               },
             })}
             error={errors.email as FieldError}
@@ -78,14 +81,14 @@ const Auth = () => {
               required: { value: true, message: "password must not be empty" },
               minLength: {
                 value: 4,
-                message: "must be at least 4 characters long",
+                message: "Password must be at least 4 characters long",
               },
               maxLength: { value: 14, message: "must be under 15 characters" },
             })}
             error={errors.password as FieldError}
             placeholder="Password"
             type={isShow ? "text" : "password"}
-            icon={isShow ? <IconEyeOff size={16} color='gray'/> : <IconEye size={16} color='gray'/>}
+            icon={isShow ? <IconEyeOff size={18} color='gray'/> : <IconEye size={18} color='gray'/>}
             pshandler={passwordShowOrHideHandler}
           />
 
@@ -108,13 +111,13 @@ const Auth = () => {
               <span className="text-blue-700">conditions.</span>
             </label>
           </div>
-          <button disabled={!isAccept} type="submit"  className="bg-blue-700 text-white px-4 py-2 rounded-3xl text-sm font-semibold mb-3 disabled:opacity-50 ">
-            Sign Up
+          <button disabled={!isAccept} type="submit"  className="bg-blue-700 text-white px-4 py-2 md:py-4 lg:py-3 xl:py-4 rounded-3xl text-sm font-semibold mb-3 disabled:opacity-50 ">
+          {!isLogin ? "Sign In" : "Sign Up"}
           </button>
 
           {/**to show only in sing in */}
           <p className="text-xs underline hover:text-blue-700 cursor-pointer text-center text-blue-500 mb-6">
-            {isLogin && "Forgot Password?"}
+            {!isLogin && "Forgot Password?"}
           </p>
           <div className="flex w-[100%] mx-auto gap-1 justify-center">
             <p className="text-xs text-slate-400  hover:text-blue-500 cursor-pointer">
@@ -129,6 +132,17 @@ const Auth = () => {
             </button>
           </div>
         </form>
+        </div>
+        <div>
+          <p className="mb-4 text-center text-xs text-gray-400"> © 2023 smart.save. All rights reserved.</p>
+        </div>
+      </section>
+      <section className="hidden lg:flex w-1/2  h-screen
+      ">
+        <div className=" bg-[url('https://www.mobilize.net/hubfs/partners.jpg')]
+        bg-center bg-contain bg-no-repeat object-cover w-full h-full">
+          
+        </div>
       </section>
     </main>
   );
