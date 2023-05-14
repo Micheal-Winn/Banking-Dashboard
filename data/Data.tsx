@@ -188,39 +188,63 @@ export const mobileLists : Array<MobileNavLists> = [
 	{
 		id:"1",
 		name:"Dashboard",
-		path:"/"
+		path:"/dashboard"
 	},
 	{
 		id:"2",
-		name:"My Wallet",
+		name:"Customer Accounts",
 		path:"/",
 		icon:<IconChevronRight size="1rem" stroke={1.5}/>,
 		nested:[
 			{
-				id:"wall1",
-				name:"overview",
-				path:"/overview"
+				id:"cus1",
+				name:"Customer List",
+				path:"/customer"
+			},
+			{
+				id:"cus2",
+				name:"Create Customer",
+				path:"/createCustomer"
 			}
 		]
 	},
 	{
 		id:"3",
-		name:"Transaction",
+		name:"Customer Accounts",
 		path:"/transaction",
 		icon:<IconChevronRight size="1rem" stroke={1.5}/>,
 		nested:[
 			{
-				id:"trans1",
-				name:"Comint",
-				path:"/transaction"
+				id:"acc1",
+				name:"Account List",
+				path:"/account-list"
 			}
 		]
 	},
 	{
 		id:"4",
-		name:"Setting",
-		path:"/setting"
-	},
+		name:"Transaction Reports",
+		path:"/transaction-reports",
+		icon:<IconChevronRight size="1rem" stroke={1.5}/>,
+		nested:[
+			{
+				id:"tran1",
+				name:"All Reports",
+				path:"/account-list"
+			},
+			{
+				id:"tran2",
+				name:"Transfer Report",
+				path:"/account-list"
+			},
+			{
+				id:"tran3",
+				name:"Customer Inqury",
+				path:"/account-list"
+			},
+		]
+	}
+	,
 	// {
 	// 	id:"5",
 	// 	name:"Notification",

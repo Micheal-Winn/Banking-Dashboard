@@ -45,11 +45,15 @@ const Header = () => {
 								>
 									{list.nested !== undefined &&
 										list.nested.map((nestLink) => (
-											<NavLink
-												key={nestLink.id}
+											<div key={nestLink.id} className='border-l-[1px] border-gray-300 '>
+												<Link href={nestLink.path}>
+												<NavLink
+												
 												label={nestLink.name}
-												className="font-semibold"
+												className="font-semibold text-gray-600"
 											/>
+												</Link>
+											</div>
 										))}
 								</NavLink>
 								{/** */}

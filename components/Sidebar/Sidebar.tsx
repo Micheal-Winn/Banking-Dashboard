@@ -13,6 +13,7 @@ import { UserButton } from './UserButton';
 import { LinksGroup } from './NavbarLinksGroup';
 import { Logo } from './Logo';
 import { useState } from 'react';
+import Link from 'next/link';
 
 const mockdata = [
   { label: 'Dashboard', icon: IconGauge },
@@ -21,8 +22,8 @@ const mockdata = [
     icon: IconUser,
     initiallyOpened: true,
     links: [
-      { label: 'Customer List', link: '/' },
-      { label: 'Create Customer', link: '/' },
+      { label: 'Customer List', link: '/customer' },
+      { label: 'Create Customer', link: '/createCustomer' },
     ],
   },
   {
@@ -89,7 +90,7 @@ const useStyles = createStyles((theme) => ({
 export default function Sidebar({children}:any) {
 
   const { classes } = useStyles();
-  const links = mockdata.map((item) => <LinksGroup {...item} key={item.label} />);
+  const links = mockdata.map((item) =>  <LinksGroup {...item} key={item.label}/>);
 
   return (
     <section className='flex h-screen'>

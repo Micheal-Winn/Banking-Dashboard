@@ -10,6 +10,7 @@ import {
   rem,
 } from '@mantine/core';
 import { IconCalendarStats, IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
+import Link from 'next/link';
 
 const useStyles = createStyles((theme) => ({
   control: {
@@ -84,17 +85,19 @@ export function LinksGroup({ icon: Icon, label, initiallyOpened, links }: LinksG
   const [opened, setOpened] = useState( false);
   const ChevronIcon = theme.dir === 'ltr' ? IconChevronRight : IconChevronLeft;
   const items = (hasLinks ? links : []).map((link) => (
-    <Text<'a'>
-      component="a"
-      className={cx(classes.link,{[classes.linkActive]:activeLink === link.label})}
-      href={link.link}
+   
+    <Text
+      component='p'
       key={link.label}
+      className={cx(classes.link,{[classes.linkActive]:activeLink === link.label})}
+      
       onClick={(event) => {event.preventDefault()
         setActiveLink(link.label);
       }}
     >
-      {link.label}
+      <Link href={link.link}>{link.label}</Link>
     </Text>
+  
   ));
 
   return (
