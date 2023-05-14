@@ -2,6 +2,7 @@
 import Head from 'next/head';
 import Sidebar from '@/components/Sidebar/Sidebar';
 import Auth from '@/components/Authentication/Auth';
+import Dashboard from '@/components/Dashboard/Dashboard';
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
       <main
       className={``}
     >
-     <Auth/> 
+     {/* <Auth/>  */}
+     <Dashboard/>
     </main>
     </>
   )

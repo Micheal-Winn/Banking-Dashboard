@@ -3,7 +3,7 @@ import ReactApexChart from 'react-apexcharts'
 
 const TransactionPieChart = () => {
   return (
-    <section className='w-[100%]  bg-white overflow-hidden rounded-lg shadow-lg py-10 lg:pt-2 '>
+    <section className='w-[100%]  sm:h-auto bg-white overflow-hidden rounded-lg shadow-lg py-2 lg:pt-2 hidden sm:block'>
         <ReactApexChart
             type='donut'
             height={310}
@@ -33,8 +33,10 @@ const TransactionPieChart = () => {
                                    
                                 },
                                name:{
-                                show:false
-                               } 
+                                show:true,
+                                
+                               },
+                                
                             },
                             
                         },
@@ -42,6 +44,7 @@ const TransactionPieChart = () => {
                     },
 
                 },
+                
                 dataLabels:{
                     enabled:false,
                     

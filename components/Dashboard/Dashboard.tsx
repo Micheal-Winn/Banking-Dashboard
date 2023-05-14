@@ -7,11 +7,12 @@ import ProgressBar from '@/components/charts/Demo';
 import CustomerTable from '@/components/Dashboard/CustomerTable';
 import AccountTable from '@/components/Dashboard/AccountTable';
 import Footer from '@/components/Footer/Footer';
+import TransactionDoughnutChart from '../charts/TransactionDoughnutChart';
 
 const TransactionChartDynamic = dynamic(() => import('@/components/charts/TransactionChart'), {ssr: false})
 const TransactionPieChartDynamic = dynamic(() => import('@/components/charts/TransactionPieChart'), {ssr: false})
 
-const dashboard = () => {
+const Dashboard = () => {
   return (
 		<>
 			<section className="box-border h-screen bg-[#FBFBFB] overflow-y-scroll">
@@ -48,6 +49,9 @@ const dashboard = () => {
 								</div>
 							</div>
 							<TransactionPieChartDynamic />
+                            <div className='w-full bg-white rounded-lg shadow-lg py-2 block sm:hidden'>
+                                <TransactionDoughnutChart/>
+                            </div>
 						</div>
 					</div>
 					<CustomerTable />
@@ -60,4 +64,4 @@ const dashboard = () => {
 	);
 }
 
-export default dashboard
+export default Dashboard

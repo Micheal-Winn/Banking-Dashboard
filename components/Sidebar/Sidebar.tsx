@@ -3,10 +3,11 @@ import {
   IconNotes,
   IconCalendarStats,
   IconGauge,
-  IconPresentationAnalytics,
-  IconFileAnalytics,
-  IconAdjustments,
   IconLock,
+  IconUsers,
+  IconReportAnalytics,
+  IconUsersGroup,
+  IconUser
 } from '@tabler/icons-react';
 import { UserButton } from './UserButton';
 import { LinksGroup } from './NavbarLinksGroup';
@@ -16,35 +17,31 @@ import { useState } from 'react';
 const mockdata = [
   { label: 'Dashboard', icon: IconGauge },
   {
-    label: 'My Wallet',
-    icon: IconNotes,
+    label: 'Customer',
+    icon: IconUser,
     initiallyOpened: true,
     links: [
-      { label: 'Overview', link: '/' },
-      { label: 'Forecasts', link: '/' },
-      { label: 'Outlook', link: '/' },
-      { label: 'Real time', link: '/' },
+      { label: 'Customer List', link: '/' },
+      { label: 'Create Customer', link: '/' },
     ],
   },
   {
-    label: 'Transactions',
-    icon: IconCalendarStats,
+    label: 'Customer Accounts',
+    icon: IconUsersGroup,
     links: [
-      { label: 'Upcoming releases', link: '/' },
-      { label: 'Previous releases', link: '/' },
-      { label: 'Releases schedule', link: '/' },
+      { label: 'Account List', link: '/' },
     ],
   },
-  { label: 'Invoices', icon: IconPresentationAnalytics },
-  { label: 'Card Center', icon: IconFileAnalytics },
-  { label: 'Contacts', icon: IconAdjustments },
+  // { label: 'Invoices', icon: IconPresentationAnalytics },
+  // { label: 'Card Center', icon: IconFileAnalytics },
+  // { label: 'Contacts', icon: IconAdjustments },
   {
-    label: 'Settings',
-    icon: IconLock,
+    label: 'Transaction Reports',
+    icon:IconReportAnalytics,
     links: [
-      { label: 'Enable 2FA', link: '/' },
-      { label: 'Change password', link: '/' },
-      { label: 'Recovery codes', link: '/' },
+      { label: 'All Reports', link: '/' },
+      { label: 'Transfer Report', link: '/' },
+      { label: 'Customer Inqury', link: '/' },
     ],
   },
 ];
