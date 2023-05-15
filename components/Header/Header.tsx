@@ -1,6 +1,6 @@
 import React from 'react'
-import Searchbar from './Searchbar'
-import Noti from './Noti'
+import Searchbar from '../Dashboard/Searchbar'
+import Noti from '../Dashboard/Noti'
 import { Burger,Drawer ,Group,Indicator,MediaQuery,NavLink,Text} from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks';
 import { mobileLists } from '@/data/Data';

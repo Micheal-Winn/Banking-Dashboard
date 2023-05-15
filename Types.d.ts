@@ -19,12 +19,17 @@ interface UserCardListInfo{
 
 interface TableData{
     id:string,
-    profile:string,
+    profile?:string,
     name:string,
     nrc:string,
     email:string,
     createdDate:string,
-    totalAccount:number
+    totalAccount:number,
+    status?:string,
+    Address?:string,
+    phone?:string
+    // date:""
+
 }
 
 interface AccountTableData{

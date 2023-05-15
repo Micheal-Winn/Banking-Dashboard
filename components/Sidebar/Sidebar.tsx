@@ -14,6 +14,7 @@ import { LinksGroup } from './NavbarLinksGroup';
 import { Logo } from './Logo';
 import { useState } from 'react';
 import Link from 'next/link';
+import Header from '../Header/Header';
 
 const mockdata = [
   { label: 'Dashboard', icon: IconGauge },
@@ -116,7 +117,10 @@ export default function Sidebar({children}:any) {
       </Navbar.Section>
     </Navbar>
       </div>
-      <main className='w-screen'>{children}</main>
+      <main className='w-screen '>
+        
+        {children}
+        </main>
     </section>
   );
 }

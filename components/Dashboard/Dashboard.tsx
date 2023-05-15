@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import Card from '@/components/Dashboard/Card'
-import Header from '@/components/Dashboard/Header'
+import Header from '@/components/Header/Header'
 
 import React from 'react'
 import ProgressBar from '@/components/charts/Demo';
@@ -16,7 +16,7 @@ const Dashboard = () => {
   return (
 		<>
 			<section className="box-border h-screen bg-[#FBFBFB] overflow-y-scroll">
-				<Header />
+			<Header/>
 				<div className=" 2xl:pl-10 xl:pl-5 lg:pl-8 md:pl-5 sm:pl-6 pl-8">
 					<Card />
 					<div className="flex flex-col xl:flex-row gap-6 sm:gap-6 md:gap-8 lg:gap-6 xl:gap-[2%] pr-6 sm:pr-7 md:pr-6 lg:pr-7 xl:pr-0 2xl:pr-1 box-border">

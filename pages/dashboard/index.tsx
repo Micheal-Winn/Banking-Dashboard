@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic'
 import Card from '@/components/Dashboard/Card'
-import Header from '@/components/Dashboard/Header'
+import Header from '@/components/Header/Header'
 
 import React from 'react'
 import ProgressBar from '@/components/charts/Demo';

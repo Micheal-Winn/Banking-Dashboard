@@ -126,6 +126,7 @@ const CustomerTable = () => {
 					className="2xl:pl-4 xl:pl-0 "
 					style={{ fontWeight: "bold" }}
 					fontSize={"xs"}
+          highlightOnHover
 				>
 					<thead>
 						<tr className="text-[0.65rem]">
@@ -139,21 +140,21 @@ const CustomerTable = () => {
                 transitionDuration={0}
               />
             </th> */}
-							<th style={{ textAlign: "center" }} className="font-bold ">
+							<th style={{ textAlign: "center" }} className="font-bold " scope="col">
 								{/* <p className="xl:hidden block">ID</p> */}
 								<p className="">Customer ID</p>
 							</th>
-							<th className={"font-bold"}>Customer Name</th>
-							<th className="font-bold">NRC</th>
+							<th className={"font-bold"} scope="col">Customer Name</th>
+							<th className="font-bold" scope="col">NRC</th>
 							{/* <th className="font-bold ">Email</th> */}
-							<th className="font-bold ">Created Date</th>
-							<th style={{ textAlign: "center" }} className="font-bold">
+							<th className="font-bold " scope="col">Created Date</th>
+							<th style={{ textAlign: "center" }} className="font-bold" scope="col">
 								Status
 							</th>
-							<th style={{ textAlign: "center" }} className="font-bold ">
+							<th style={{ textAlign: "center" }} className="font-bold " scope="col">
 								Total Account
 							</th>
-							<th>
+							<th scope="col">
 								{/* {selection.length >= 2 && (
                 <ActionIcon>
                   <IconTrash color="red" />
