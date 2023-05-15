@@ -7,7 +7,7 @@ const CustomerListsTable = () => {
   const rows = customerLists.map((customer) => {
     return (
       <tr key={customer.id}>
-        <td style={{ padding: "0.7rem 0.7rem 0.7rem 1rem" }}>
+        <td scope="col" className="pl-16">
           <Checkbox
             // checked={selection.includes(row.id)}
             // onChange={() => toggleRow(row.id)}
@@ -30,7 +30,7 @@ const CustomerListsTable = () => {
                 CT
               </Avatar.Fallback>
             </Avatar.Root>
-            <p className="font-semibold text-xs">{customer.name}</p>
+            <p className="font-semibold text-[0.65rem]">{customer.name}</p>
           </div>
         </td>
         <td>{customer.nrc}</td>
@@ -45,18 +45,18 @@ const CustomerListsTable = () => {
           </div>
         </td>
         <td>
-          <button className="text-blue-600">Edit User</button>
+          <button className="text-blue-600 font-semibold">Edit User</button>
         </td>
       </tr>
     );
   });
 
   return (
-    <section className="mt-2">
-      <Table>
+    <section className="mt-4">
+      <Table className="shadow-lg bg-white rounded-lg"  verticalSpacing={"sm"} horizontalSpacing={"lg"} highlightOnHover fontSize={"xs"}>
         <thead>
-          <tr>
-            <th style={{ padding: "0.7rem 0.7rem 0.7rem 1rem" }}>
+          <tr className="uppercase bg-slate-200">
+            <th scope="col" className="pl-16">
               <Checkbox
                 onChange={() => {}}
                 // indeterminate={

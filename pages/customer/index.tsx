@@ -3,6 +3,7 @@ import Header from "@/components/Header/Header";
 import React from "react";
 import { IconPlus, IconDownload } from "@tabler/icons-react";
 import CustomerListsTable from "@/components/CustomerComponent/CustomerListsTable";
+import DownloadDropdown from "@/components/CustomerComponent/DownloadDropdown";
 
 const index = () => {
   return (
@@ -14,8 +15,8 @@ const index = () => {
             Customer Lists
           </h2>
           <div className="flex items-center gap-3">
-            <Button text="Create Customer" icon={<IconPlus />} />
-            <Button text="Download" icon={<IconDownload />} />
+            <Button text="Create Customer" icon={<IconPlus size={16} />} />
+            <DownloadDropdown/>
           </div>
         </div>
         <CustomerListsTable/>
