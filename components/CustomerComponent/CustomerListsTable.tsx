@@ -1,7 +1,9 @@
 import React from "react";
-import { Checkbox, Table } from "@mantine/core";
+import { Checkbox, Divider, MediaQuery, Table,Pagination } from "@mantine/core";
 import { customerLists } from "@/data/Data";
 import * as Avatar from "@radix-ui/react-avatar";
+import EditDialog from "../utils/EditDialog";
+import ModalDialog from "../utils/ModalDialog";
 
 const CustomerListsTable = () => {
   const rows = customerLists.map((customer) => {
@@ -45,7 +47,9 @@ const CustomerListsTable = () => {
           </div>
         </td>
         <td>
-          <button className="text-blue-600 font-semibold">Edit User</button>
+          {/* <button className="text-blue-600 font-semibold">Edit User</button> */}
+          <EditDialog/>
+          {/* <ModalDialog/> */}
         </td>
       </tr>
     );
@@ -78,6 +82,17 @@ const CustomerListsTable = () => {
         </thead>
         <tbody>{rows}</tbody>
       </Table>
+      <Divider size="xs" />
+			<MediaQuery largerThan="sm" styles={{ display: "none" }}>
+				<div className=" w-[250px] ml-auto py-6">
+					<Pagination total={5} size={"sm"} />
+				</div>
+			</MediaQuery>
+			<MediaQuery smallerThan={"sm"} styles={{ display: "none" }}>
+				<div className=" w-[400px] ml-auto py-6">
+					<Pagination total={5} size={"lg"} />
+				</div>
+			</MediaQuery>
     </section>
   );
 };
