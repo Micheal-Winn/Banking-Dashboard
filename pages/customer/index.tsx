@@ -4,12 +4,12 @@ import React from "react";
 import { IconPlus, IconDownload } from "@tabler/icons-react";
 import CustomerListsTable from "@/components/CustomerComponent/CustomerListsTable";
 import DownloadDropdown from "@/components/CustomerComponent/DownloadDropdown";
+import Layout from "./layout";
 
 const index = () => {
   return (
-    <main>
-      <Header />
-      <section className="pl-8 pr-8 pt-8">
+    <Layout>
+       <section className="pl-8 pr-8 pt-8">
         <div className="flex justify-between items-center w-full">
           <h2 className="text-2xl font-semibold mt-3 text-gray-800">
             Customer Lists
@@ -21,7 +21,7 @@ const index = () => {
         </div>
         <CustomerListsTable/>
       </section>
-    </main>
+    </Layout>
   );
 };
 
