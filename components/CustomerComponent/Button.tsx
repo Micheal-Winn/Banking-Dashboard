@@ -3,12 +3,16 @@ import {IconPlus, TablerIconsProps} from "@tabler/icons-react"
 
 interface BtnProps{
     text:string,
-    icon:ReactNode
+    icon?:ReactNode,
+    bg:string,
+    textColor:string,
+    border?:string,
+    padding?:string
 }
 
-const Button:React.FC<BtnProps> = ({text,icon}) => {
+const Button:React.FC<BtnProps> = ({text,icon,bg,textColor,border,padding}) => {
   return (
-    <button className='flex items-center gap-2 bg-blue-700 text-white px-5 text-sm rounded-md py-2 font-semibold'  aria-label="Customise options">
+    <button className={`flex items-center gap-2 ${bg} ${textColor} ${border} ${padding} text-sm rounded-md font-semibold`}  aria-label="Customise options">
         {icon}
         <p>{text}</p>
     </button>

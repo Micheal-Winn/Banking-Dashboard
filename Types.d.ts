@@ -18,16 +18,20 @@ interface UserCardListInfo{
 }
 
 interface TableData{
-    id:string,
+    id?:string,
     profile?:string,
     name:string,
     nrc:string,
-    email:string,
+    email?:string,
     createdDate:string,
-    totalAccount:number,
+    totalAccount?:number,
     status?:string,
     Address?:string,
-    phone?:string
+    phone?:string,
+    accountNo?:string,
+    amount?:number,
+    accountType?:string,
+    accountStatus?:string,
     // date:""
 
 }
@@ -51,3 +55,11 @@ interface MobileNavLists{
     icon?:TablerIconsProps,
     nested?:Array<nested>
 }
+
+interface NewCusProps{
+    name:string,
+    placeholder:string,
+    handler:(e:React.ChangeEvent<HTMLInputElement>)=>void,
+    photo?:string
+}
+

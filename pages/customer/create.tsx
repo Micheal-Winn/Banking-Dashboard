@@ -1,7 +1,7 @@
 import React from "react";
 import { Breadcrumbs, Anchor ,Text} from "@mantine/core";
 import Link from "next/link";
-import Layout from "./layout";
+import Layout from "../../components/utils/layout";
 import NewCustomer from "@/components/CustomerComponent/NewCustomer";
 
 const links = [

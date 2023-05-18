@@ -4,9 +4,9 @@ import React from "react";
 import { IconPlus, IconDownload } from "@tabler/icons-react";
 import CustomerListsTable from "@/components/CustomerComponent/CustomerListsTable";
 import DownloadDropdown from "@/components/CustomerComponent/DownloadDropdown";
-import Layout from "./layout";
+import Layout from "../../components/utils/layout";
 
-const index = () => {
+const CustomerLists = () => {
   return (
     <Layout>
        <section className="pl-8 pr-8 pt-8">
@@ -15,7 +15,7 @@ const index = () => {
             Customer Lists
           </h2>
           <div className="flex items-center gap-3">
-            <Button text="Create Customer" icon={<IconPlus size={16} />} />
+            <Button bg='bg-blue-700' textColor='text-white' text="Create Customer" padding='px-5 py-2' icon={<IconPlus size={16}  />} />
             <DownloadDropdown/>
           </div>
         </div>
@@ -25,4 +25,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default CustomerLists;
