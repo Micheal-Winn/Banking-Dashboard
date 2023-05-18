@@ -5,7 +5,9 @@ import React from 'react'
 const AccountLists = () => {
   return (
     <Layout>
+        <section className='pl-8 pr-8 pt-8'>
         <CustomerAccountListsTable/>
+        </section>
     </Layout>
   )
 }
