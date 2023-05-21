@@ -4,6 +4,7 @@ import {
   NavLink,
   NewCusProps,
   TableData,
+  TransactionTableProps,
   UserCardListInfo,
 } from "@/Types";
 import {
@@ -472,7 +473,17 @@ export const accountList:Array<TableData> = [
 		name:"Thant Zin Win",
 		nrc:"5/MaMaNa(N)12345",
 		phone:"09985099050",
-		accountNo:"ACCC00004",
+		accountNo:"ACCC00005",
+		amount:4245000.00,
+		accountType:"Saving",
+		accountStatus:"Deposite",
+		createdDate:"12/12/2021",
+	},
+	{
+		name:"Thant Zin Win",
+		nrc:"5/MaMaNa(N)12345",
+		phone:"09985099050",
+		accountNo:"ACCC00006",
 		amount:4245000.00,
 		accountType:"Saving",
 		accountStatus:"Deposite",
@@ -488,14 +499,90 @@ export const accountList:Array<TableData> = [
 		accountStatus:"Deposite",
 		createdDate:"12/12/2021",
 	},
-	{
-		name:"Thant Zin Win",
-		nrc:"5/MaMaNa(N)12345",
-		phone:"09985099050",
-		accountNo:"ACCC00004",
-		amount:4245000.00,
-		accountType:"Saving",
-		accountStatus:"Deposite",
-		createdDate:"12/12/2021",
-	},
+];
+
+
+export const transactionReportTableHeadData:Array<string> = ["Transaction ID","Account No", "Transaction Amount","Flash","Transaction Type","Transaction Date",""];
+
+export const transactionReportTableRowsData : Array<TransactionTableProps> =[
+  {
+    id:"12087E",
+    accountNo:"ACC00004",
+    amount:250000.0,
+    flash:"Dr",
+    type:"transfer",
+    date:"21/5/2023 5:08:42 PM"
+  },
+  {
+    id:"12087E",
+    accountNo:"ACC00004",
+    amount:250000.0,
+    flash:"Dr",
+    type:"transfer",
+    date:"21/5/2023 5:08:42 PM"
+  },
+  {
+    id:"12087E",
+    accountNo:"ACC00004",
+    amount:250000.0,
+    flash:"Dr",
+    type:"transfer",
+    date:"21/5/2023 5:08:42 PM"
+  },
+  {
+    id:"12087E",
+    accountNo:"ACC00004",
+    amount:250000.0,
+    flash:"Dr",
+    type:"transfer",
+    date:"21/5/2023 5:08:42 PM"
+  },
+  {
+    id:"12087E",
+    accountNo:"ACC00004",
+    amount:250000.0,
+    flash:"Dr",
+    type:"transfer",
+    date:"21/5/2023 5:08:42 PM"
+  },
+  {
+    id:"12087E",
+    accountNo:"ACC00004",
+    amount:250000.0,
+    flash:"Dr",
+    type:"transfer",
+    date:"21/5/2023 5:08:42 PM"
+  },
+  {
+    id:"12087E",
+    accountNo:"ACC00004",
+    amount:250000.0,
+    flash:"Dr",
+    type:"transfer",
+    date:"21/5/2023 5:08:42 PM"
+  },
+  {
+    id:"12087E",
+    accountNo:"ACC00004",
+    amount:250000.0,
+    flash:"Dr",
+    type:"transfer",
+    date:"21/5/2023 5:08:42 PM"
+  },
+  {
+    id:"12087E",
+    accountNo:"ACC00004",
+    amount:250000.0,
+    flash:"Dr",
+    type:"transfer",
+    date:"21/5/2023 5:08:42 PM"
+  },
+  {
+    id:"12087E",
+    accountNo:"ACC00004",
+    amount:250000.0,
+    flash:"Dr",
+    type:"transfer",
+    date:"21/5/2023 5:08:42 PM"
+  },
 ]

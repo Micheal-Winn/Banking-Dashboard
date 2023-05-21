@@ -63,3 +63,12 @@ interface NewCusProps{
     photo?:string
 }
 
+
+interface TransactionTableProps {
+    id:string,
+    accountNo:string,
+    amount:number,
+    flash:string,
+    type:string,
+    date:string
+}

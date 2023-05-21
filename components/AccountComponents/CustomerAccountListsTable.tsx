@@ -12,13 +12,16 @@ import {
   useMantineTheme,
   Text
 } from "@mantine/core";
-import React from "react";
+import React, { useState } from "react";
 import Button from "../CustomerComponent/Button";
 import { IconPlus, IconDownload } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
+import CustomerDepositeModel from "./CustomerDepositeModel";
 
 const CustomerAccountListsTable = () => {
   const [opened, { open, close }] = useDisclosure(false);
+  const [statusOpened,setStatusOpened] = useState<boolean>(false);
+  const [depositeAccountNo,setDepositeAccountNo] = useState<string | undefined>("")
   const theme = useMantineTheme();
 
   const rows = accountList.map((account, i) => (
@@ -37,7 +40,10 @@ const CustomerAccountListsTable = () => {
       <td>{account.amount}</td>
       <td>{account.accountType}</td>
       <td>{account.createdDate}</td>
-      <td className="text-center">{account.accountStatus}</td>
+      <td className="cursor-pointer text-blue-700"><button className="bg-blue-700 text-white rounded-2xl text-xs px-4 py-2 hover:bg-blue-600" onClick={()=>{
+        setDepositeAccountNo(account.accountNo)
+        setStatusOpened(!statusOpened)
+      }}>{account?.accountStatus}</button></td>
       <td>...</td>
     </tr>
   ));
@@ -75,6 +81,7 @@ const CustomerAccountListsTable = () => {
         
       </Modal>
 
+      <CustomerDepositeModel opened={statusOpened} close={()=>setStatusOpened(!statusOpened)} id={depositeAccountNo}/>
 
 
       <section className="mt-4">
@@ -133,7 +140,7 @@ const CustomerAccountListsTable = () => {
         </MediaQuery>
         <MediaQuery smallerThan={"sm"} styles={{ display: "none" }}>
           <div className=" w-[400px] ml-auto py-6">
-            <Pagination total={5} size={"lg"} />
+            <Pagination total={5} size={"md"} />
           </div>
         </MediaQuery>
       </section>
