@@ -1,5 +1,6 @@
 import {
   AccountTableData,
+  DatePickerTableProps,
   MobileNavLists,
   NavLink,
   NewCusProps,
@@ -503,6 +504,7 @@ export const accountList:Array<TableData> = [
 
 
 export const transactionReportTableHeadData:Array<string> = ["Transaction ID","Account No", "Transaction Amount","Flash","Transaction Type","Transaction Date",""];
+export const datePickerHeadData : Array<string> = ["No","Sender Account No","Receiver Account No","Transaction Amount","Transaction Date",""]
 
 export const transactionReportTableRowsData : Array<TransactionTableProps> =[
   {
@@ -585,4 +587,13 @@ export const transactionReportTableRowsData : Array<TransactionTableProps> =[
     type:"transfer",
     date:"21/5/2023 5:08:42 PM"
   },
+]
+
+export const datePickerTableRowsData :Array<DatePickerTableProps> = [
+  {
+    senderNo:"MN0004",
+    receiverNo:"MN0005",
+    amount:400000,
+    date:"21/5/2023"
+  }
 ]

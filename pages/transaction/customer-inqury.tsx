@@ -1,8 +1,12 @@
+import TransactionFilterId from '@/components/TransactionComponents/TransactionFilterId'
+import Layout from '@/components/utils/layout'
 import React from 'react'
 
 const CustomerInqury = () => {
   return (
-    <div>CustomerInqury</div>
+    <Layout>
+      <TransactionFilterId/>
+    </Layout>
   )
 }
 

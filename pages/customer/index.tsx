@@ -15,7 +15,7 @@ const CustomerLists = () => {
             Customer Lists
           </h2>
           <div className="flex items-center gap-3">
-            <Button bg='bg-blue-700' textColor='text-white' text="Create Customer" padding='px-5 py-2' icon={<IconPlus size={16}  />} />
+            <Button bg='bg-blue-700' textColor='text-white' text="Create Customer" padding='px-5 py-2 rounded-md' icon={<IconPlus size={16}  />} />
             <DownloadDropdown/>
           </div>
         </div>

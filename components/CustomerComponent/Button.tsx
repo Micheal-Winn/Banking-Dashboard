@@ -14,7 +14,7 @@ interface BtnProps{
 
 const Button:React.FC<BtnProps> = ({text,icon,bg,textColor,border,padding,handler}) => {
   return (
-    <button onClick={handler} className={`flex items-center gap-2 ${bg} ${textColor} ${border} ${padding} text-sm rounded-md font-semibold`}  aria-label="Customise options">
+    <button onClick={handler} className={`flex items-center gap-2 ${bg} ${textColor} ${border} ${padding} text-sm font-semibold`}  aria-label="Customise options">
         {icon}
         <p>{text}</p>
     </button>

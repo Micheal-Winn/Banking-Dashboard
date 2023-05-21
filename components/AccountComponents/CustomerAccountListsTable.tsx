@@ -76,7 +76,7 @@ const CustomerAccountListsTable = () => {
         <TextInput label="Name" placeholder="Name"/>
        </div>
        <Group position="right" className="mt-6">
-       <Button text="Create Account" bg='bg-blue-700' textColor='text-white' padding='px-8 py-3' />
+       <Button text="Create Account" bg='bg-blue-700' textColor='text-white' padding='px-8 py-3 rounded-md' />
        </Group>
         
       </Modal>
@@ -95,7 +95,7 @@ const CustomerAccountListsTable = () => {
               bg="bg-blue-700"
               textColor="text-white"
               text="Create Account"
-              padding="px-5 py-2"
+              padding="px-5 py-2 rounded-md"
               icon={<IconPlus size={16} />}
             />
           </div>

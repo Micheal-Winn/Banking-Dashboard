@@ -72,3 +72,10 @@ interface TransactionTableProps {
     type:string,
     date:string
 }
+
+interface DatePickerTableProps{
+    senderNo:string,
+    receiverNo:string,
+    amount:number,
+    date:string
+}

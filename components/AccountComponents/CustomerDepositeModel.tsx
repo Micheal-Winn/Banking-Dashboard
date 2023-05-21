@@ -51,7 +51,7 @@ const CustomerDepositeModel: React.FC<StatusProps> = ({
           text="Deposite"
           bg="bg-blue-700"
           textColor="text-white"
-          padding="px-8 py-3"
+          padding="px-8 py-3 rounded-md"
         />
       </Group>
     </Modal>

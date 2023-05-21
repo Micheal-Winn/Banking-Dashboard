@@ -1,7 +1,6 @@
 import { transactionReportTableHeadData, transactionReportTableRowsData } from "@/data/Data";
 import { Checkbox, Divider, Input, MediaQuery, Pagination, Table } from "@mantine/core";
 import React from "react";
-import Searchbar from "../Dashboard/Searchbar";
 import { IconSearch } from "@tabler/icons-react";
 
 const TransactionReportTable = () => {
