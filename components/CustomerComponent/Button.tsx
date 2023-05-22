@@ -15,7 +15,7 @@ interface BtnProps{
 
 const Button:React.FC<BtnProps> = ({text,icon,bg,textColor,border,padding,handler,disabled}) => {
   return (
-    <button onClick={handler} className={`flex items-center gap-2 ${bg} ${textColor} ${border} ${padding} text-sm font-semibold disabled:bg-gray-400`}  aria-label="Customise options" disabled={disabled}>
+    <button onClick={handler} className={`flex items-center gap-2 ${bg} ${textColor} ${border} ${padding} text-sm font-semibold disabled:bg-gray-400 disabled:cursor-not-allowed cursor-pointer`}  aria-label="Customise options" disabled={disabled}>
         {icon}
         <p>{text}</p>
     </button>
