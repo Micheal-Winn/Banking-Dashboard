@@ -9,12 +9,13 @@ interface BtnProps{
     textColor:string,
     border?:string,
     padding?:string,
-    handler?:()=>void
+    handler?:()=>void,
+    disabled?:boolean
 }
 
-const Button:React.FC<BtnProps> = ({text,icon,bg,textColor,border,padding,handler}) => {
+const Button:React.FC<BtnProps> = ({text,icon,bg,textColor,border,padding,handler,disabled}) => {
   return (
-    <button onClick={handler} className={`flex items-center gap-2 ${bg} ${textColor} ${border} ${padding} text-sm font-semibold`}  aria-label="Customise options">
+    <button onClick={handler} className={`flex items-center gap-2 ${bg} ${textColor} ${border} ${padding} text-sm font-semibold disabled:bg-gray-400`}  aria-label="Customise options" disabled={disabled}>
         {icon}
         <p>{text}</p>
     </button>
