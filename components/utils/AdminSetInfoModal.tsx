@@ -26,8 +26,8 @@ const AdminSetInfoModal = () => {
           theme.colorScheme === "dark"
             ? theme.colors.dark[9]
             : theme.colors.gray[2],
-        opacity: 0.55,
-        blur: 3,
+        opacity: 1,
+        blur: 12,
       }}
       classNames={{
         overlay: "bg-[#00000080]",

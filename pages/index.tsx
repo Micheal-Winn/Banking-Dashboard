@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Sidebar from '@/components/Sidebar/Sidebar';
 import Auth from '@/components/Authentication/Auth';
 import Dashboard from '@/components/Dashboard/Dashboard';
-import AdminSetInfoModal from '@/components/utils/AdminSetInfoModal';
+
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
       className={``}
     >
      {/* <Auth/>  */}
-     <AdminSetInfoModal/>
+     
      <Dashboard/>
     </main>
     </>
