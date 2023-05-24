@@ -2,21 +2,27 @@ import React, { useState } from "react";
 import { useForm, FieldError } from "react-hook-form";
 import * as Checkbox from "@radix-ui/react-checkbox";
 import { IconCheck,IconEye,IconEyeOff } from "@tabler/icons-react";
+import { useRouter } from "next/router";
 import UserInput from "./UserInput";
-import Image from "next/image";
+import {setCookie} from "cookies-next"
+import { useAdminAuthentication } from "../Hooks/admin.hook";
+import { adminAuthApi } from "../api/axios";
+import { Button } from "@mantine/core";
 
 const Auth = () => {
+  const router = useRouter();
+  
   const {
     register,
+    reset,
     formState: { errors },
     handleSubmit,
   } = useForm();
 
-  const [isLogin,setIsLogin] = useState(false)
+  const [isLogin,setIsLogin] = useState(true)
   const [isAccept,setIsAccept] = useState(false)
   const [isShow,setIsShow] = useState(false)
 
-  
 
   const passwordShowOrHideHandler  = ()=> {
     setIsShow(!isShow)
@@ -27,6 +33,25 @@ const Auth = () => {
   const checkHandler= ()=> {
     setIsAccept(!isAccept)
   
+  }
+
+  const signUpFirstUserHandler = (data:any)=>{
+    console.log(data)
+  
+  }
+
+  const loginSuccessHandler = (data:any)=>{
+    console.log(data.data)
+    setCookie("token",data.data.token)
+    router.push("/")
+    reset() 
+  }
+
+  const {isLoading:authenticating,mutate:authenticate} = useAdminAuthentication(isLogin ? adminAuthApi.login : adminAuthApi.signup,isLogin ? loginSuccessHandler:signUpFirstUserHandler)
+
+  const submitFormHandler = (data:any) => {
+    console.log("data",data)
+    authenticate(data)
   }
 
   return (
@@ -40,10 +65,10 @@ const Auth = () => {
 
         {/**form */}
         <form
-          onSubmit={handleSubmit(() => {})}
+          onSubmit={handleSubmit(submitFormHandler)}
           className="grid grid-cols-1 w-[70%] sm:w-[50%] lg:w-[75%] xl:w-[60%] 2xl:w-[45%] mx-auto gap-2 "
         >
-          {isLogin && (
+          {!isLogin && (
             <UserInput
             label="Username"
             register={register("name", {
@@ -52,10 +77,10 @@ const Auth = () => {
                 value: 2,
                 message: "Username must be at least two characters long",
               },
-              pattern: {
-                value: /^[A-Za-z0-9_]+$/g,
-                message: "username can be a-z,A-Z,0-9,_",
-              },
+              // pattern: {
+              //   value: /^[A-Za-z0-9_]+$/g,
+              //   message: "username can be a-z,A-Z,0-9,_",
+              // },
             })}
             error={errors.name as FieldError}
             placeholder="Username"
@@ -64,7 +89,7 @@ const Auth = () => {
           )}
           <UserInput
             label="Email"
-            register={register("email", {
+            register={register("Email", {
               required: { value: true, message: "email must not be empty" },
               pattern: {
                 value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g,
@@ -73,11 +98,11 @@ const Auth = () => {
             })}
             error={errors.email as FieldError}
             placeholder="Email"
-            autoFocus
+            
           />
           <UserInput
             label="Password"
-            register={register("password", {
+            register={register("Password", {
               required: { value: true, message: "password must not be empty" },
               minLength: {
                 value: 4,
@@ -111,13 +136,14 @@ const Auth = () => {
               <span className="text-blue-700">conditions.</span>
             </label>
           </div>
-          <button disabled={!isAccept} type="submit"  className="bg-blue-700 text-white px-4 py-2 md:py-4 lg:py-3 xl:py-4 rounded-3xl text-sm font-semibold mb-3 disabled:opacity-50 ">
-          {!isLogin ? "Sign In" : "Sign Up"}
-          </button>
+          {/* <button disabled={!isAccept} type="submit"  className="bg-blue-700 text-white px-4 py-2 md:py-4 lg:py-3 xl:py-4 rounded-3xl text-sm font-semibold mb-3 disabled:opacity-50 ">
+          {isLogin ? "Sign In" : "Sign Up"}
+          </button> */}
+          <Button type="submit" size="lg" disabled={!isAccept} loading={authenticating} radius={"xl"} className="bg-blue-700">{isLogin ? "Sign In" : "Sign Up"}</Button>
 
           {/**to show only in sing in */}
-          <p className="text-xs underline hover:text-blue-700 cursor-pointer text-center text-blue-500 mb-6">
-            {!isLogin && "Forgot Password?"}
+          <p className="text-xs underline hover:text-blue-700 cursor-pointer text-center mt-2  text-blue-500 mb-6">
+            {isLogin && "Forgot Password?"}
           </p>
           <div className="flex w-[100%] mx-auto gap-1 justify-center">
             <p className="text-xs text-slate-400  hover:text-blue-500 cursor-pointer">
@@ -125,10 +151,10 @@ const Auth = () => {
             </p>
             <button
               onClick={()=>setIsLogin(!isLogin)}
-              type="button"
-              className="text-xs  hover:text-blue-500 cursor-pointer text-blue-700"
+              type="submit"
+              className="text-xs  hover:text-blue-500 cursor-pointer text-blue-700 font-medium"
             >
-              {isLogin ? "Sign In" : "Sign Up"}
+              {!isLogin ? "Sign In" : "Sign Up"}
             </button>
           </div>
         </form>

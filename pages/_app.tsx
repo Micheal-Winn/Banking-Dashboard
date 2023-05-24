@@ -17,6 +17,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient())
+  const [authenticated, setAuthenticated] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -27,6 +28,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
       if(!token || token == "") (router.push("/auth"))
       
+    }else{
+      setAuthenticated(true)
     }
 
   }, [router]);
@@ -39,7 +42,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <QueryClientProvider client={queryClient}>
           <Hydrate state={pageProps.dehydratedState}>
           <Sidebar>
-            <Component {...pageProps} />
+            {authenticated ? (<Component {...pageProps} />) : null}
           </Sidebar>
           </Hydrate>
           </QueryClientProvider>
