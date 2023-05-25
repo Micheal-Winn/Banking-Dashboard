@@ -37,12 +37,15 @@ const Auth = () => {
 
   const signUpFirstUserHandler = (data:any)=>{
     console.log(data)
+    setCookie("flag","firstUser")
+    router.push("/first-signup-user")
+    reset()
   
   }
 
   const loginSuccessHandler = (data:any)=>{
-    console.log(data.data)
-    setCookie("token",data.data.token)
+    console.log(data?.data?.Token)
+    setCookie("token",data?.data?.Token)
     router.push("/")
     reset() 
   }

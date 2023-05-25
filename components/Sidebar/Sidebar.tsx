@@ -16,6 +16,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Header from '../Header/Header';
 import { useRouter } from 'next/router';
+import { getCookie } from 'cookies-next';
 
 const mockdata = [
   { label: 'Dashboard', icon: IconGauge },
@@ -96,9 +97,10 @@ export default function Sidebar({children}:any) {
   const links = mockdata.map((item) =>  <LinksGroup {...item} key={item.label}/>);
 
   useEffect(()=>{
-    const token = localStorage.getItem("token");
+    const token = getCookie("token");
+    const flag  = getCookie("flag");
 
-    if(!token){
+    if(!token || !flag){
       setAuthenticated(false)
     }else{
       setAuthenticated(true)

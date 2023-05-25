@@ -11,6 +11,7 @@ import {
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import React from "react";
+import { getCookie } from "cookies-next";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ["latin"] });
@@ -21,18 +22,23 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   useEffect(() => {
-    const authRoute = ["/auth"];
 
-    if (!authRoute.includes(router.pathname)) {
-      const token = localStorage.getItem("token");
-
-      if(!token || token == "") (router.push("/auth"))
-      
+    const token = getCookie("token");
+    const flag = getCookie("flag");
+    console.log("flag",flag,"token",token) 
+    console.log("render")
+    if(token) {
+      setAuthenticated(true);
+    }else if (flag && flag !== "") {
+      setAuthenticated(true);
+      router.push("/first-signup-user");     
     }else{
-      setAuthenticated(true)
-    }
-
-  }, [router]);
+      
+      router.push("/auth");
+      setAuthenticated(true);
+      
+    } 
+  }, []);
 
   return (
     <main
