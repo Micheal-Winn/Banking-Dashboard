@@ -41,7 +41,7 @@ const Header = () => {
 									key={list.id}
 									label={list.name}
 									rightSection={list.icon}
-									className="pl-5 pr-10 font-semibold"
+									className="pl-5 pr-10 font-semibold active:bg-black"
 								>
 									{list.nested !== undefined &&
 										list.nested.map((nestLink) => (

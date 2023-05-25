@@ -19,15 +19,17 @@ import { useRouter } from 'next/router';
 import { getCookie } from 'cookies-next';
 
 const mockdata = [
-  { label: 'Dashboard', icon: IconGauge },
+  { label: 'Dashboard', icon: IconGauge,link:"/" },
   {
     label: 'Customer',
     icon: IconUser,
     initiallyOpened: true,
+    
     links: [
       { label: 'Customer List', link: '/customer' },
       { label: 'Create Customer', link: '/createCustomer' },
     ],
+    link:""
   },
   {
     label: 'Customer Accounts',
@@ -35,6 +37,7 @@ const mockdata = [
     links: [
       { label: 'Account List', link: '/' },
     ],
+    link:""
   },
   // { label: 'Invoices', icon: IconPresentationAnalytics },
   // { label: 'Card Center', icon: IconFileAnalytics },
@@ -47,6 +50,7 @@ const mockdata = [
       { label: 'Transfer Report', link: '/' },
       { label: 'Customer Inqury', link: '/' },
     ],
+    link:""
   },
 ];
 
@@ -72,12 +76,14 @@ const useStyles = createStyles((theme) => ({
 
   links: {
     marginLeft: `calc(${theme.spacing.md} * -1)`,
-    marginRight: `calc(${theme.spacing.md} * -1)`,
+    marginRight: `calc(${theme.spacing.md} * 0)`,
+    borderRadius:theme.radius.md
   },
 
   linksInner: {
     paddingTop: theme.spacing.xl,
-    paddingBottom: theme.spacing.xl,
+    paddingBottom: theme.spacing.xl,   
+    borderRadius:theme.radius.md                                   
   },
 
   footer: {
@@ -96,21 +102,20 @@ export default function Sidebar({children}:any) {
   const { classes } = useStyles();
   const links = mockdata.map((item) =>  <LinksGroup {...item} key={item.label}/>);
 
-  useEffect(()=>{
-    const token = getCookie("token");
-    const flag  = getCookie("flag");
+  // useEffect(()=>{
+  //   const token = getCookie("token");
 
-    if(!token || !flag){
-      setAuthenticated(false)
-    }else{
-      setAuthenticated(true)
-    }
+  //   if(!token){
+  //     setAuthenticated(false)
+  //   }else{
+  //     setAuthenticated(true)
+  //   }
 
-  },[router])
+  // },[router])
 
   return (
     <section className='flex h-screen'>
-     {authenticated && (
+     {!authenticated && (
        <div className='hidden sm:block'>
        <Navbar  width={{ sm: 175 ,md:215,lg:230,xl:300}} p="md" className={classes.navbar}>
        <Navbar.Section className={classes.header}>

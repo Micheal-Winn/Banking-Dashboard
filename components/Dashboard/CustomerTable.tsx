@@ -43,13 +43,13 @@ const CustomerTable = () => {
         : [...current, id]
     );
 
-  const toggleAll = () =>
-    setSelection((current) =>
-      current.length === tableData.length ? [] : tableData.map((row) => row.id)
-    );
+  // const toggleAll = () =>
+  //   setSelection((current) =>
+  //     current.length === tableData.length ? [] : tableData.map((row) => row.id)
+  //   );
 
   const rows = tableData.map((row) => {
-    const selected = selection.includes(row.id);
+    // const selected = selection.includes(row.id);
 
     return (
       <tr

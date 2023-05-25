@@ -8,6 +8,8 @@ import {
   UnstyledButton,
   createStyles,
   rem,
+  NavLink,
+  Button,
 } from '@mantine/core';
 import { IconCalendarStats, IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
 import Link from 'next/link';
@@ -57,11 +59,12 @@ const useStyles = createStyles((theme) => ({
   },
 
   labelActive:{
-    '&,&:hover': {
+    '&:active,&:hover': {
       borderLeftColor: theme.fn.variant({ variant: 'filled', color: theme.primaryColor })
         .background,
       backgroundColor: theme.fn.variant({ variant: 'filled', color: theme.primaryColor })
         .background,
+        color: theme.white,
     },
   },
 
@@ -75,9 +78,10 @@ interface LinksGroupProps {
   label: string;
   initiallyOpened?: boolean;
   links?: { label: string; link: string }[];
+  link?:string | ""
 }
 
-export function LinksGroup({ icon: Icon, label, initiallyOpened, links }: LinksGroupProps) {
+export function LinksGroup({ icon: Icon, label, initiallyOpened, links,link }: LinksGroupProps) {
   const [activeLink, setActiveLink] = useState('');
   const [labelActive,setLabelActive] = useState('')
   const { classes, theme,cx } = useStyles();
@@ -85,7 +89,7 @@ export function LinksGroup({ icon: Icon, label, initiallyOpened, links }: LinksG
   const [opened, setOpened] = useState( false);
   const ChevronIcon = theme.dir === 'ltr' ? IconChevronRight : IconChevronLeft;
   const items = (hasLinks ? links : []).map((link) => (
-   
+   //change navlink instead of Text
     <Text
       component='p'
       key={link.label}
@@ -93,6 +97,7 @@ export function LinksGroup({ icon: Icon, label, initiallyOpened, links }: LinksG
       
       onClick={(event) => {event.preventDefault()
         setActiveLink(link.label);
+        
       }}
     >
       <Link href={link.link}>{link.label}</Link>
@@ -102,16 +107,25 @@ export function LinksGroup({ icon: Icon, label, initiallyOpened, links }: LinksG
 
   return (
     <>
-      <UnstyledButton onClick={() => {setOpened((o) => !o)
-      }}  className={classes.control}>
-        <Group position="apart" spacing={0}>
+
+      <UnstyledButton  onClick={() => {
+        setOpened((o) => !o)
+        setLabelActive(label)
+      }}  className={cx("hover:bg-blue-600  block w-full font-medium py-3 px-4 ml-2 rounded-md overflow-hidden mb-2",{["hover:bg-blue-400"]:labelActive === label})}>
+        <Group  position="apart" spacing={0} className='rounded-md'>
           <Box sx={{ display: 'flex', alignItems: 'center' }} >
             <ThemeIcon variant="light" size={30}>
               <Icon size="1.1rem" />
             </ThemeIcon>
-            <Box ml="md">
+            <Box ml={"xs"}>
+            <Link href={`${link}`}>
               <Text>{label}</Text>
+            </Link>
             </Box>
+                
+              
+             
+            
           </Box>
           {hasLinks && (
             <ChevronIcon
@@ -124,8 +138,10 @@ export function LinksGroup({ icon: Icon, label, initiallyOpened, links }: LinksG
             />
           )}
         </Group>
+        
       </UnstyledButton>
-      {hasLinks ? <Collapse in={opened}>{items}</Collapse> : null}
+      {hasLinks ? <Collapse in={opened} className='rounded-md'>{items}</Collapse> : null}
+
     </>
   );
 }
@@ -146,7 +162,9 @@ export function NavbarLinksGroup() {
       sx={(theme) => ({
         minHeight: rem(220),
         padding: theme.spacing.md,
-        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.white,
+        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.green[6],
+        borderRadius: theme.radius.md,
+      
       })}
     >
       <LinksGroup {...mockdata} />

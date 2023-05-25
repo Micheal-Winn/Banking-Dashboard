@@ -21,24 +21,20 @@ export default function App({ Component, pageProps }: AppProps) {
   const [authenticated, setAuthenticated] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    const token = getCookie("token");
-    const flag = getCookie("flag");
-    console.log("flag",flag,"token",token) 
-    console.log("render")
-    if(token) {
-      setAuthenticated(true);
-    }else if (flag && flag !== "") {
-      setAuthenticated(true);
-      router.push("/first-signup-user");     
-    }else{
+  //   const token = getCookie("token");
+
+  //   console.log("token",token) 
+  //   console.log("render")
+  //   if(token) {
+  //     setAuthenticated(true);
+  //   }else{ 
+  //     router.push("/auth");
+  //     setAuthenticated(true);
       
-      router.push("/auth");
-      setAuthenticated(true);
-      
-    } 
-  }, []);
+  //   } 
+  // }, []);
 
   return (
     <main
@@ -48,7 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <QueryClientProvider client={queryClient}>
           <Hydrate state={pageProps.dehydratedState}>
           <Sidebar>
-            {authenticated ? (<Component {...pageProps} />) : null}
+            {!authenticated ? (<Component {...pageProps} />) : null}
           </Sidebar>
           </Hydrate>
           </QueryClientProvider>
