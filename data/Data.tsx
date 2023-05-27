@@ -12,6 +12,7 @@ import {
   IconBellRinging,
   IconMessage,
   IconChevronRight,
+  IconGauge,IconUser,IconUsersGroup,IconReportAnalytics
 } from "@tabler/icons-react";
 
 export const NavbarLinks: Array<NavLink> = [
@@ -326,6 +327,8 @@ export const accountTableData: Array<AccountTableData> = [
   },
 ];
 
+
+
 export const mobileLists: Array<MobileNavLists> = [
   {
     id: "1",
@@ -596,4 +599,70 @@ export const datePickerTableRowsData :Array<DatePickerTableProps> = [
     amount:400000,
     date:"21/5/2023"
   }
+]
+
+export const SibebarLists:Array<MobileNavLists>=[
+  {
+    id: "1",
+    name: "Dashboard",
+    leftIcon:<IconGauge size={"1rem"} stroke={1.5}/>,
+    path: "/",
+  },
+  {
+    id: "2",
+    name: "Customer",
+    path: "",
+    leftIcon:<IconUser size={"1rem"} stroke={1.5}/>,
+    icon: <IconChevronRight size="1rem" stroke={1.5} />,
+    nested: [
+      {
+        id: "cus1",
+        name: "Customer List",
+        path: "/customer",
+      },
+      {
+        id: "cus2",
+        name: "Create Customer",
+        path: "/customer/create",
+      },
+    ],
+  },
+  {
+    id: "3",
+    name: "Customer Accounts",
+    path: "",
+    leftIcon:<IconUsersGroup size={"1rem"} stroke={1.5}/>,
+    icon: <IconChevronRight size="1rem" stroke={1.5} />,
+    nested: [
+      {
+        id: "acc1",
+        name: "Account List",
+        path: "/accounts",
+      },
+    ],
+  },
+  {
+    id: "4",
+    name: "Transaction Reports",
+    path: "",
+    leftIcon:<IconReportAnalytics size={"1rem"} stroke={1.5}/>,
+    icon: <IconChevronRight size="1rem" stroke={1.5} />,
+    nested: [
+      {
+        id: "tran1",
+        name: "All Reports",
+        path: "/transaction",
+      },
+      {
+        id: "tran2",
+        name: "Transfer Report",
+        path: "/transaction/transaction-report",
+      },
+      {
+        id: "tran3",
+        name: "Customer Inqury",
+        path: "/transaction/customer-inqury",
+      }
+    ],
+  },
 ]

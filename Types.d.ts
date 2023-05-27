@@ -53,7 +53,8 @@ interface MobileNavLists{
     name:string,
     path:string,
     icon?:TablerIconsProps,
-    nested?:Array<nested>
+    nested?:Array<nested>,
+    leftIcon?:ReactNode
 }
 
 interface NewCusProps{

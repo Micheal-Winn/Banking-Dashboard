@@ -2,7 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Inter } from "next/font/google";
 import { MantineProvider } from "@mantine/core";
-import Sidebar from "@/components/Sidebar/Sidebar";
+
 import {
   Hydrate,
   QueryClient,
@@ -12,6 +12,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import React from "react";
 import { getCookie } from "cookies-next";
+import Sidebar from "@/components/Sidebar2/Sidebar";
 
 // If loading a variable font, you don't need to specify the font weight
 const inter = Inter({ subsets: ["latin"] });

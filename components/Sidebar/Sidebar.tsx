@@ -27,7 +27,7 @@ const mockdata = [
     
     links: [
       { label: 'Customer List', link: '/customer' },
-      { label: 'Create Customer', link: '/createCustomer' },
+      { label: 'Create Customer', link: '/customer/create' },
     ],
     link:""
   },
