@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Divider, Menu, Navbar } from '@mantine/core'
 
 import User from './User'
 import NavLinkGroup from './NavLinkGroup'
+import UserProfileButton from './UserProfileButton'
 
 const Sidebar = ({children}:any) => {
+  const [active,setActive] = useState("1")
+
   return (
     <nav className=' h-screen  bg-gray-200 flex'>
        <section className='hidden sm:block'>
@@ -14,15 +17,14 @@ const Sidebar = ({children}:any) => {
           <Divider size={"xs"} className='my-4'/>
           </Navbar.Section>
           <Navbar.Section grow>
-             <NavLinkGroup/>
+             <NavLinkGroup activeStatus={active} setActiveStatus={(str)=>setActive(str)}/>
           </Navbar.Section>
           <Navbar.Section>
-            <div>User</div>
+            <UserProfileButton setActiveStatus={(str)=>setActive(str)}/>
           </Navbar.Section>
         </Navbar>
        </section>
        <main className='w-screen '>
-        
         {children}
         </main>
     </nav>
