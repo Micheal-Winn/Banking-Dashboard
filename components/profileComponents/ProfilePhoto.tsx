@@ -1,8 +1,12 @@
 import React from "react";
-import { Box, Button, Group, Text } from "@mantine/core";
+import { ActionIcon, Box, Button, Group, Text, } from "@mantine/core";
 import * as Avatar from "@radix-ui/react-avatar";
+import {IconPencilMinus } from "@tabler/icons-react"
+import { useMediaQuery } from "@mantine/hooks";
 
 const ProfilePhoto = () => {
+  const smScreen = useMediaQuery('(min-width:40em)')
+
   return (
     <section className=" lg:pt-6 sm:pl-2 xl:pl-14 w-full xl:pr-1 2xl:pr-4">
      <Box className="flex  lg:flex-col gap-[2.5rem] sm:gap-16 md:gap-2 ">
@@ -16,7 +20,9 @@ const ProfilePhoto = () => {
       </Text>
       </Box>
       
-      <Avatar.Root className=" sm:ml-8 my-4 bg-blackA3 inline-flex h-[80px] w-[80px] sm:h-[120px] sm:w-[120px] md:h-[150px]  md:w-[150px] xl:h-[135px] xl:w-[135px] select-none items-center justify-center overflow-hidden rounded-full align-middle">
+     <div className="relative  cursor-pointer h-[80px] w-[80px] sm:h-[120px] sm:w-[120px] md:h-[150px]  md:w-[150px] xl:h-[135px] xl:w-[135px]">
+     <ActionIcon  size={smScreen ? "md" : "xs"} className="absolute rounded-full top-[90%] left-[80%] sm:left-[90%] z-30  bg-blue-600  hover:bg-blue-700"><IconPencilMinus color="white" size={smScreen ? "0.8rem" : "0.5rem"}/></ActionIcon>
+     <Avatar.Root className=" sm:ml-8 my-4 bg-blackA3 inline-flex w-full h-full select-none items-center justify-center overflow-hidden rounded-full align-middle ">
         <Avatar.Image
           className="h-full w-full rounded-[inherit] object-cover"
           alt="Profile Photo"
@@ -29,12 +35,16 @@ const ProfilePhoto = () => {
           PT
         </Avatar.Fallback>
       </Avatar.Root>
+      
+     </div>
      </Box>
       
       <Text className="text-xs sm:text-sm xl:text-lg mb-2 font-semibold tracking-wide mt-2">Update Cover</Text>
       <Text  color="dimmed" className="text-[0.65rem] sm:text-xs xl:text-sm">
         Cover of at least Size <span className="text-black">1170x920</span>
       </Text>
+      <div className="relative  cursor-pointer">
+      <ActionIcon size={smScreen ? "md" : "xs"} className="absolute rounded-full bottom-0 sm:top-[90%] -right-1 z-30  bg-blue-600  hover:bg-blue-700"><IconPencilMinus color="white" size={smScreen ? "0.8rem" : "0.5rem"}/></ActionIcon>
       <Avatar.Root className="bg-blackA3 inline-flex h-[200px] w-full lg:w-full xl:w-full 2xl:w-full  select-none items-center justify-center overflow-hidden  align-middle mt-2 rounded-md">
         <Avatar.Image
           src="https://images.unsplash.com/photo-1535025183041-0991a977e25b?w=300&dpr=2&q=80"
@@ -48,6 +58,7 @@ const ProfilePhoto = () => {
           BP
         </Avatar.Fallback>
       </Avatar.Root>
+      </div>
      
     </section>
   );
