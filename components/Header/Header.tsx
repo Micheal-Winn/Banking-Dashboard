@@ -2,7 +2,7 @@ import React from 'react'
 import Searchbar from '../Dashboard/Searchbar'
 import Noti from '../Dashboard/Noti'
 import { Burger,Drawer ,Group,Indicator,MediaQuery,NavLink,Text} from '@mantine/core'
-import { useDisclosure } from '@mantine/hooks';
+import { useDisclosure} from '@mantine/hooks';
 import { mobileLists } from '@/data/Data';
 import Link from 'next/link';
 import { IconBellRinging, IconMessage, IconLogout } from "@tabler/icons-react";

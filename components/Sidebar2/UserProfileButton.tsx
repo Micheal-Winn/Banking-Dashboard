@@ -1,4 +1,5 @@
 import { Avatar, Box, Button, Group, Text } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import { IconChevronRight } from "@tabler/icons-react";
 import Link from "next/link";
 import React from "react";
@@ -8,10 +9,13 @@ interface status{
 }
 
 const UserProfileButton:React.FC<status> = ({setActiveStatus}) => {
+  const largeScreen = useMediaQuery('(min-width:62em)')
+  const smallScreen = useMediaQuery('(max-width:48em)')
+
   return (
     <Link href={"/profile"} onClick={()=>setActiveStatus("profile")}>
-      <Group position="apart" className="hover:bg-gray-100 py-1 px-1 rounded-md">
-        <Group>
+      <Group position="apart" className="hover:bg-gray-100 py-1 xl:px-1 rounded-md">
+        <Box className="flex items-center gap-1">
           <Avatar
             alt="profile"
             radius={"xl"}
@@ -20,16 +24,17 @@ const UserProfileButton:React.FC<status> = ({setActiveStatus}) => {
             }
           />
           <div>
-            <Text size="sm" weight={500}>
+            <Text  className="text-[0.6rem] xl:text-xs 2xl:text-sm" weight={500}>
               Thant Zin Win
             </Text>
 
-            <Text color="dimmed" size="xs">
+            <Text color="dimmed"  className="text-[0.55rem] xl:text-[0.65rem]">
               thantzinwin@gamil.com
             </Text>
           </div>
-        </Group>
-        <IconChevronRight size={"1rem"} stroke={1.5}/>
+        </Box>
+        {}
+        <IconChevronRight size={largeScreen ? "1rem" : smallScreen ? "0.8rem" : "0.6rem"} stroke={1.5}/>
       </Group>
     </Link>
   );
