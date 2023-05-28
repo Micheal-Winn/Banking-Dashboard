@@ -5,7 +5,7 @@ import * as Avatar from "@radix-ui/react-avatar";
 const ProfilePhoto = () => {
   return (
     <section className=" lg:pt-6 sm:pl-2 xl:pl-14 w-full xl:pr-1 2xl:pr-4">
-     <Box className="flex  lg:flex-col gap-[3.5rem] sm:gap-16 md:gap-2 ">
+     <Box className="flex  lg:flex-col gap-[2.5rem] sm:gap-16 md:gap-2 ">
       <Box className="">
       <Text className="text-xs sm:text-sm xl:text-lg mb-2 mt-7 lg:mt-0 font-semibold tracking-wide">Update Profile</Text>
       <Text color="dimmed" className="text-[0.55rem] sm:text-xs xl:text-sm mt-4 xl:mt-0 ">
@@ -16,7 +16,7 @@ const ProfilePhoto = () => {
       </Text>
       </Box>
       
-      <Avatar.Root className=" sm:ml-8 my-4 bg-blackA3 inline-flex h-[100px] w-[100px] sm:h-[120px] sm:w-[120px] md:h-[150px]  md:w-[150px] xl:h-[135px] xl:w-[135px] select-none items-center justify-center overflow-hidden rounded-full align-middle">
+      <Avatar.Root className=" sm:ml-8 my-4 bg-blackA3 inline-flex h-[80px] w-[80px] sm:h-[120px] sm:w-[120px] md:h-[150px]  md:w-[150px] xl:h-[135px] xl:w-[135px] select-none items-center justify-center overflow-hidden rounded-full align-middle">
         <Avatar.Image
           className="h-full w-full rounded-[inherit] object-cover"
           alt="Profile Photo"
@@ -31,7 +31,7 @@ const ProfilePhoto = () => {
       </Avatar.Root>
      </Box>
       
-      <Text className="text-xs sm:text-sm xl:text-lg mb-2 font-semibold tracking-wide md:mt-2">Update Cover</Text>
+      <Text className="text-xs sm:text-sm xl:text-lg mb-2 font-semibold tracking-wide mt-2">Update Cover</Text>
       <Text  color="dimmed" className="text-[0.65rem] sm:text-xs xl:text-sm">
         Cover of at least Size <span className="text-black">1170x920</span>
       </Text>
