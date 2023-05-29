@@ -408,46 +408,49 @@ export const newCusData: Array<NewCusProps> = [
     name: "Full Name",
     placeholder: "please enter  full name",
     handler: () => {},
+    
   },
   {
     name: "NRC",
     placeholder: "Enter NRC number",
     handler: () => {},
+    
   },
   {
     name: "Phone Number",
     placeholder: "Enter phone Number",
     handler: () => {},
+    
   },
   {
     name: "Email",
     placeholder: "Enter email address",
     handler: () => {},
+    
   },
   {
     name: "City",
     placeholder: "Enter customer city",
     handler: () => {},
+    
   },
   {
     name: "Township",
     placeholder: "Enter name of Township",
     handler: () => {},
+    
   },
   {
     name: "Address",
     placeholder: "Enter full address",
     handler: () => {},
-  },
-  {
-    name: "Date of Birth",
-    placeholder: "Enter date of birth",
-    handler: () => {},
+    
   },
   {
     name: "Job Title",
     placeholder: "Enter job title",
     handler: () => {},
+    
   },
   
 ];

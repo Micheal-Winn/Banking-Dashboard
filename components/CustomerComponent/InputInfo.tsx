@@ -1,6 +1,7 @@
 import React from "react";
-import { Text, TextInput,Select } from "@mantine/core";
+import { TextInput,Select } from "@mantine/core";
 import { newCusData } from "@/data/Data";
+import { DateInput } from "@mantine/dates";
 
 const InputInfo = () => {
   return (
@@ -12,11 +13,12 @@ const InputInfo = () => {
           withAsterisk
           placeholder={info.placeholder}
           label={<span className="font-medium">{info.name}</span>}
-          radius={"md"}
+          radius={"md"} 
           size="md"
           required
         />
       ))}
+      <DateInput label={<span className="font-medium">Date of Birth</span>} placeholder="Enter your date of birth" radius={"md"} size="md" required valueFormat="DD/MM/YYYY"/>
       <Select label={<span className="font-medium">Gender</span>} size="md" radius={"md"} data={["Male", "Female", "Others"]} required/>
     </div>
   );

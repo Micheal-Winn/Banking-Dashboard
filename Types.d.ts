@@ -61,7 +61,8 @@ interface NewCusProps{
     name:string,
     placeholder:string,
     handler:(e:React.ChangeEvent<HTMLInputElement>)=>void,
-    photo?:string
+    photo?:string,
+    
 }
 
 

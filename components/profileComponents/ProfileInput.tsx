@@ -35,7 +35,7 @@ const ProfileInput:React.FC<LabelProps> = (
     <TextInput
       label={<Text color="dimmed" className="font-semibold sm:text-[0.6rem] md:text-[0.7rem] xl:text-[0.8rem] tracking-wide">{label}</Text>}
       placeholder={placeholder}
-      {...form.getInputProps(`${prop}`)}
+      {...form}
       radius={"sm"}
       variant="filled"
       size={lgScreen ? "sm" : mdScreen ? "xs" : smScreen ? "xs" : "xs"}

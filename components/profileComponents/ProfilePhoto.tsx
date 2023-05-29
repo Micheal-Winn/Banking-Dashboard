@@ -3,46 +3,46 @@ import { ActionIcon, Box, Text, Modal } from "@mantine/core";
 import * as Avatar from "@radix-ui/react-avatar";
 import { IconPencilMinus } from "@tabler/icons-react";
 import { useDisclosure, useMediaQuery } from "@mantine/hooks";
-import { useForm } from "react-hook-form";
 import UploadModal from "./UploadModal";
 
-const ProfilePhoto = () => {
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm();
+const ProfilePhoto: React.FC<FormProps> = ({ 
+  profileModal,backgroundModal,profileHandler,backgroundHandler,
+   profileOpen,profileClose,backgroundOpen,backgroundClose,
+   base64ProfileUrl,base64BackgroundUrl
+ }) => {
+
+
   const smScreen = useMediaQuery("(min-width:40em)");
-  const [profileModal, { open: profileOpen, close: profileClose }] =
-    useDisclosure(false);
-  const [backgroundModal, { open: openBackground, close: closeBackground }] =
-    useDisclosure(false);
-  const [base64ProfileUrl, setBase64ProfileUrl] = useState<string>("");
-  const [base64BackgroundUrl, setBase64BackgroundUrl] = useState<string>("");
+  // const [profileModal, { open: profileOpen, close: profileClose }] =
+  //   useDisclosure(false);
+  // const [backgroundModal, { open: openBackground, close: closeBackground }] =
+  //   useDisclosure(false);
+  // const [base64ProfileUrl, setBase64ProfileUrl] = useState<string>("");
+  // const [base64BackgroundUrl, setBase64BackgroundUrl] = useState<string>("");
 
-  const profileHandler = (data: File) => {
-    if (data) {
-      console.log("file", data);
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setBase64ProfileUrl(reader.result as string);
-      };
-      reader.readAsDataURL(data);
-      profileClose();
-    }
-  };
+  // const profileHandler = (data: File) => {
+  //   if (data) {
+  //     console.log("file", data);
+  //     const reader = new FileReader();
+  //     reader.onloadend = () => {
+  //       setBase64ProfileUrl(reader.result as string);
+  //     };
+  //     reader.readAsDataURL(data);
+  //     profileClose();
+  //   }
+  // };
 
-  const backgroundHandler = (data: File) => {
-    if (data) {
-      console.log("file", data);
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setBase64BackgroundUrl(reader.result as string);
-      };
-      reader.readAsDataURL(data);
-      closeBackground();
-    }
-  };
+  // const backgroundHandler = (data: File) => {
+  //   if (data) {
+  //     console.log("file", data);
+  //     const reader = new FileReader();
+  //     reader.onloadend = () => {
+  //       setBase64BackgroundUrl(reader.result as string);
+  //     };
+  //     reader.readAsDataURL(data);
+  //     closeBackground();
+  //   }
+  // };
   return (
     <>
       <section className=" lg:pt-6 sm:pl-2 xl:pl-14 w-full xl:pr-1 2xl:pr-4">
@@ -106,7 +106,7 @@ const ProfilePhoto = () => {
         </Text>
         <div className="relative  cursor-pointer">
           <ActionIcon
-            onClick={openBackground}
+            onClick={backgroundOpen}
             size={smScreen ? "md" : "xs"}
             className="absolute rounded-full bottom-0 sm:top-[90%] -right-1 z-30  bg-blue-600  hover:bg-blue-700"
           >
@@ -141,14 +141,16 @@ const ProfilePhoto = () => {
           placeholder="Click to upload photo"
           handler={profileHandler}
           title="Upload Profile Image"
+          
         />
       ) : (
         <UploadModal
           open={backgroundModal}
-          close={closeBackground}
+          close={backgroundClose}
           placeholder="Click to upload photo"
           handler={backgroundHandler}
           title="Upload Cover Image"
+          
         />
       )}
     </>
@@ -156,3 +158,16 @@ const ProfilePhoto = () => {
 };
 
 export default ProfilePhoto;
+
+type FormProps = {
+  profileModal: boolean;
+  backgroundModal: boolean;
+  profileOpen: () => void;
+  profileClose: () => void;
+  backgroundOpen: () => void;
+  backgroundClose: () => void;
+  profileHandler: (data: File) => void;
+  backgroundHandler: (data: File) => void;
+  base64ProfileUrl: string;
+   base64BackgroundUrl: string;
+};
