@@ -32,8 +32,20 @@ interface TableData{
     amount?:number,
     accountType?:string,
     accountStatus?:string,
+    gender?:string,
     // date:""
 
+}
+
+interface CustomerEditProps{
+    name:string,
+    nrc:string,
+    phone:string,
+    email:string,
+    Address:string,
+    createdDate:string,
+    gender:string,
+    totalAccount:number
 }
 
 interface AccountTableData{
