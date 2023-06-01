@@ -10,6 +10,7 @@ import {  Checkbox, ScrollArea, Table } from "@mantine/core";
 import { customerLists } from "@/data/Data";
 import * as Avatar from "@radix-ui/react-avatar";
 import Example from "@/components/CustomerComponent/MantineCustomerTable";
+import DemoPage from "@/components/CustomerComponent/CustomerListsTable/table";
 
 const CustomerLists = () => {
   const router = useRouter()
@@ -28,7 +29,7 @@ const CustomerLists = () => {
     
       
        <Layout>
-       {/* <section className="pl-4 pr-3 overflow-hidden">
+       <section className="pl-4 pr-3 overflow-hidden bg-white">
        <div className="flex justify-between items-center w-full" >
           <h2 className="text-2xl font-semibold mt-3 text-gray-800">
             Customer Lists
@@ -46,11 +47,9 @@ const CustomerLists = () => {
           </div>
           
         </div>
-        <Example/>
-       </section> */}
-       <div className="overflow-x-scroll">
-       <Example/>
-       </div>
+        <DemoPage/>
+       </section>
+      
         
        </Layout>
      
