@@ -1,10 +1,17 @@
 import {
-    ColumnDef,
-    flexRender,
-    getCoreRowModel,
-    useReactTable,
-    getPaginationRowModel
-  } from "@tanstack/react-table"
+  ColumnDef,
+  ColumnFiltersState,
+  SortingState,
+  VisibilityState,
+  flexRender,
+  getCoreRowModel,
+  getFacetedRowModel,
+  getFacetedUniqueValues,
+  getFilteredRowModel,
+  getPaginationRowModel,
+  getSortedRowModel,
+  useReactTable,
+} from "@tanstack/react-table"
    
   import {
     Table,
@@ -14,6 +21,8 @@ import {
     TableHeader,
     TableRow,
   } from "@/components/ui/table"
+import { DataTablePagination } from "@/components/TableComponents/data-table-pagination"
+import React from "react"
    
   interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
@@ -24,22 +33,48 @@ import {
     columns,
     data,
   }: DataTableProps<TData, TValue>) {
+
+    const [rowSelection, setRowSelection] = React.useState({})
+    const [columnVisibility, setColumnVisibility] =
+      React.useState<VisibilityState>({})
+    const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
+      []
+    )
+    const [sorting, setSorting] = React.useState<SortingState>([])
+
     const table = useReactTable({
       data,
-      columns,
-      getCoreRowModel: getCoreRowModel(),
-      getPaginationRowModel:getPaginationRowModel()
+    columns,
+    state: {
+      sorting,
+      columnVisibility,
+      rowSelection,
+      columnFilters,
+    },
+    enableRowSelection: true,
+    onRowSelectionChange: setRowSelection,
+    onSortingChange: setSorting,
+    onColumnFiltersChange: setColumnFilters,
+    onColumnVisibilityChange: setColumnVisibility,
+    getCoreRowModel: getCoreRowModel(),
+    getFilteredRowModel: getFilteredRowModel(),
+    getPaginationRowModel: getPaginationRowModel(),
+    getSortedRowModel: getSortedRowModel(),
+    getFacetedRowModel: getFacetedRowModel(),
+    getFacetedUniqueValues: getFacetedUniqueValues(),
+
     })
    
     return (
-      <div className="rounded-md border overflow-x-auto">
+      <section className="space-y-3">
+        <div className="rounded-md border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id} className="text-[0.65rem]">
+              <TableRow key={headerGroup.id} className="text-[0.65rem] 2xl:text-sm">
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead key={header.id} >
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -58,7 +93,7 @@ import {
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
-                  className="text-[0.65rem]"
+                  className="text-[0.65rem] 2xl:text-xs"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
@@ -78,5 +113,7 @@ import {
         </Table>
         
       </div>
+      <DataTablePagination table={table}/>
+      </section>
     )
   }

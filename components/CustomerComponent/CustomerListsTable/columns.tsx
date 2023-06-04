@@ -1,24 +1,13 @@
 import { ColumnDef } from "@tanstack/react-table";
 import { statuses } from "@/components/TableData/data";
 import { DataTableColumnHeader } from "@/components/TableComponents/data-table-column-header";
+import { DataForTable } from "@/Types";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type Payment = {
-  id: string;
-  profile: string;
-  name: string;
-  nrc: string;
-  email: string;
-  createdDate: string;
-  totalAccount: number;
-  Address: string;
-  phone: string;
-  status: "Online" | "Offline";
-  gender: string;
-};
 
-export const columns: ColumnDef<Payment>[] = [
+
+export const columns: ColumnDef<DataForTable>[] = [
   {
     accessorKey: "id",
     header: "ID",
@@ -28,7 +17,7 @@ export const columns: ColumnDef<Payment>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Name" />
     ),
-    cell: ({ row }) => <p>{row.getValue("name")}</p>,
+    cell: ({ row }) => <p className="">{row.getValue("name")}</p>,
   },
   {
     accessorKey: "nrc",
@@ -37,9 +26,9 @@ export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: "email",
     header: ({column})=> (
-      <DataTableColumnHeader column={column} title="Email" />
+      <DataTableColumnHeader column={column} title="Email" className=""/>
     ),
-    cell: ({row})=> <p>{row.getValue("email")}</p>
+    cell: ({row})=> <p className="2xl:text-xs">{row.getValue("email")}</p>
   }
   ,
   {
@@ -48,7 +37,8 @@ export const columns: ColumnDef<Payment>[] = [
   },
   {
     accessorKey: "totalAccount",
-    header: "Total Account",
+    header: "Account",
+    cell:({row})=> <p className="pl-4">{row.getValue("totalAccount")}</p>
   },
   {
     accessorKey: "Address",
@@ -81,7 +71,7 @@ export const columns: ColumnDef<Payment>[] = [
           {status.icon && (
             <status.icon
               color={status.value === "online" ? "green" : "red"}
-              className="mr-2 h-4"
+              className={`mr-1 h-3 ${status.value === "online" ? "text-green-500" : "text-red-500"}`}
             />
           )}
           <span>{status.label}</span>
@@ -94,6 +84,6 @@ export const columns: ColumnDef<Payment>[] = [
     header: ({ column }) => (
       <DataTableColumnHeader column={column} title="Gender" />
     ),
-    cell: ({ row }) => <p className="text-xs">{row.getValue("gender")}</p>,
+    cell: ({ row }) => <p className="text-xs 2xl:text-xs">{row.getValue("gender")}</p>,
   },
 ];

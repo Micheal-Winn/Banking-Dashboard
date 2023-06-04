@@ -27,9 +27,9 @@ const CustomerLists = () => {
 
   return (
     
-      
+      <main className="h-screen bg-white">
        <Layout>
-       <section className="pl-4 pr-3 overflow-scroll">
+       <section className="pl-4 pr-3 bg-white">
        <div className="flex justify-between items-center w-full" >
           <h2 className="text-2xl font-semibold mt-3 text-gray-800">
             Customer Lists
@@ -52,7 +52,7 @@ const CustomerLists = () => {
       
         
        </Layout>
-     
+       </main>
     
   );
 };

@@ -37,6 +37,20 @@ interface TableData{
 
 }
 
+export type DataForTable = {
+    id: string;
+    profile: string;
+    name: string;
+    nrc: string;
+    email: string;
+    createdDate: string;
+    totalAccount: number;
+    Address: string;
+    phone: string;
+    status: "Online" | "Offline";
+    gender: string;
+  };
+
 interface CustomerEditProps{
     name:string,
     nrc:string,

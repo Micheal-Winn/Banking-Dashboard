@@ -11,7 +11,7 @@ const Header = () => {
   const [opened, { toggle }] = useDisclosure(false);
   const label = opened ? 'Close navigation' : 'Open navigation';
   return (
-		<section className="flex p-3 justify-between items-center sticky backdrop-blur-lg top-0 z-30 bg-white">
+		<section className="flex p-3 justify-between items-center sticky backdrop-blur-lg top-0 z-30">
 			<h2 className="sm:text-3xl font-bold">Dashboard</h2>
 			<Searchbar />
 			<Noti />

@@ -11,7 +11,7 @@ const Sidebar = ({children}:any) => {
   const mediumScreen = useMediaQuery('(min-width:62em)')
 
   return (
-    <nav className=' h-screen  bg-gray-200 flex'>
+    <nav className=' h-screen   flex'>
        <section className='hidden sm:block'>
         <Navbar width={{ xs:188,sm: 188 ,md:230,lg:230,xl:300}} p={mediumScreen ? "xs" : "xs"}>
           <Navbar.Section>
@@ -26,7 +26,7 @@ const Sidebar = ({children}:any) => {
           </Navbar.Section>
         </Navbar>
        </section>
-       <main className='w-screen overflow-x-scroll'>
+       <main className='w-screen overflow-hidden'>
         {children}
         </main>
     </nav>
