@@ -26,7 +26,7 @@ const Sidebar = ({children}:any) => {
           </Navbar.Section>
         </Navbar>
        </section>
-       <main className='w-screen '>
+       <main className='w-screen overflow-x-scroll'>
         {children}
         </main>
     </nav>

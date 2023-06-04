@@ -26,7 +26,7 @@ const CreateCustomer = () => {
       <Breadcrumbs className="flex items-center" separator={<Text className="text-2xl mt-3">/</Text>}>{links}</Breadcrumbs>
       <NewCustomer/>
       </section>
-    </Layout>
+    </Layout>   
   );
 };
 

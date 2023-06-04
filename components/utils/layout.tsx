@@ -5,7 +5,7 @@ const Layout:React.FC<LayoutProps> = ({children}) => {
   return (
     <>
         <Header/>
-        <main>{children}</main>
+        <main className='h-[100vh-60px] bg-slate-50 overflow-y-scroll'>{children}</main>
     </>
   )
 }

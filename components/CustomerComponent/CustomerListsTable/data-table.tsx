@@ -3,6 +3,7 @@ import {
     flexRender,
     getCoreRowModel,
     useReactTable,
+    getPaginationRowModel
   } from "@tanstack/react-table"
    
   import {
@@ -27,14 +28,15 @@ import {
       data,
       columns,
       getCoreRowModel: getCoreRowModel(),
+      getPaginationRowModel:getPaginationRowModel()
     })
    
     return (
-      <div className="rounded-md border">
+      <div className="rounded-md border overflow-x-auto">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
+              <TableRow key={headerGroup.id} className="text-[0.65rem]">
                 {headerGroup.headers.map((header) => {
                   return (
                     <TableHead key={header.id}>
@@ -56,6 +58,7 @@ import {
                 <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
+                  className="text-[0.65rem]"
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id}>
@@ -73,6 +76,7 @@ import {
             )}
           </TableBody>
         </Table>
+        
       </div>
     )
   }
