@@ -12,4 +12,18 @@ export const statuses = [
         label:"Offline",
         icon:IconCircleFilled
     }
+];
+
+export const activeStatus = [
+    {
+        value:"active",
+        label:"Active",
+        icon:IconCircleFilled
+    },
+    {
+        value:"Inactive",
+        label:"Inactive",
+        icon:IconCircleFilled
+    
+    }
 ]

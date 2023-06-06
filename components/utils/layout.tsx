@@ -3,10 +3,10 @@ import React, { ReactNode } from 'react'
 
 const Layout:React.FC<LayoutProps> = ({children}) => {
   return (
-    <>
+    <main className='h-screen bg-white overflow-y-scroll'>
         <Header/>
-        <main className=''>{children}</main>
-    </>
+        <section className=''>{children}</section>
+    </main>
   )
 }
 

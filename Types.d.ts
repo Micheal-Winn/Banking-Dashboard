@@ -51,6 +51,16 @@ export type DataForTable = {
     gender: string;
   };
 
+export type DashboardCustomer = {
+    id:string,
+    profile:string,
+    name:string,
+    nrc:string,
+    date:string,
+    status:"Active" | "Inactive"
+    account:number
+}
+
 interface CustomerEditProps{
     name:string,
     nrc:string,

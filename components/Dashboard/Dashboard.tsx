@@ -8,6 +8,7 @@ import CustomerTable from '@/components/Dashboard/CustomerTable';
 import AccountTable from '@/components/Dashboard/AccountTable';
 import Footer from '@/components/Footer/Footer';
 import TransactionDoughnutChart from '../charts/TransactionDoughnutChart';
+import CustomerTableShad from './DashoboardTable/CustomerTableShad';
 
 const TransactionChartDynamic = dynamic(() => import('@/components/charts/TransactionChart'), {ssr: false})
 const TransactionPieChartDynamic = dynamic(() => import('@/components/charts/TransactionPieChart'), {ssr: false})
@@ -16,8 +17,8 @@ const Dashboard = () => {
   return (
 		<>
 			<section className="box-border h-screen bg-[#FBFBFB] overflow-y-scroll">
-			<Header/>
-				<div className=" 2xl:pl-10 xl:pl-5 lg:pl-8 md:pl-5 sm:pl-6 pl-8">
+			
+				<div className=" 2xl:pl-10 xl:pl-5 lg:pl-8 md:pl-5 sm:pl-6 pl-8 bg-black">
 					<Card />
 					<div className="flex flex-col xl:flex-row gap-6 sm:gap-6 md:gap-8 lg:gap-6 xl:gap-[2%] pr-6 sm:pr-7 md:pr-6 lg:pr-7 xl:pr-0 2xl:pr-1 box-border">
 						<TransactionChartDynamic />
@@ -54,11 +55,12 @@ const Dashboard = () => {
                             </div>
 						</div>
 					</div>
-					<CustomerTable />
-					<AccountTable/>
+					<CustomerTableShad/>	
+					{/* <CustomerTable /> */}
+					{/* <AccountTable/> */}
 					
 				</div>
-				<Footer/>
+				{/* <Footer/> */}
 			</section>
 		</>
 	);

@@ -23,6 +23,11 @@ import {
   } from "@/components/ui/table"
 import { DataTablePagination } from "@/components/TableComponents/data-table-pagination"
 import React from "react"
+import { DataTableViewOptions } from "@/components/TableComponents/data-table-view-options"
+import Button from "@/components/CustomerComponent/Button"
+import { IconPlus } from "@tabler/icons-react"
+import { useRouter } from "next/router"
+import DownloadDropdown from "../DownloadDropdown"
    
   interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
@@ -41,6 +46,7 @@ import React from "react"
       []
     )
     const [sorting, setSorting] = React.useState<SortingState>([])
+    const router = useRouter()
 
     const table = useReactTable({
       data,
@@ -67,6 +73,21 @@ import React from "react"
    
     return (
       <section className="space-y-3">
+        {/* <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
+            <Button
+              bg="bg-blue-700"
+              textColor="text-white"
+              text="Create Customer"
+              padding="px-5 py-2 rounded-md"
+              icon={<IconPlus size={16} />}
+              handler={()=> router.push('/customer/create')}
+            />
+            <DownloadDropdown />
+          </div>
+          <DataTableViewOptions table={table}/>
+        </div> */}
+        
         <div className="rounded-md border">
         <Table>
           <TableHeader>
